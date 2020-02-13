@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+    <div class="container">
+      <h1 class='display-4 title-merits'>Messages Section</h1>
+      <h3 class="display-4 tabs-merits-font">Chats</h3>
+      {% for messages in list %}
+        {% if messages != user %}
+          <h1 class='list-group-item dropdown-color'><a href="{% url 'accounts:messages_list_content' pk=messages.pk %}" style='color: inherit;'>User: {{ messages.username }}</a></h1>
+          <h1></h1>
+          <div class="dropdown-divider"></div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <h1><a class="btn btn-primary custom-btn" style="display: flex; justify-content: center;" href="{% url 'accounts:message_create' %}" style='color: inherit;'>Start a Chat</a></h1>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load embed_video_tags %}
+
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
+    <h1 class='contentfont'>New Video</h1>
+    <div class="container firstfont dropdown-color" style='padding:20px;'>
+      <form class="post-form" method="POST">
+        <div class="container">
+          {% csrf_token %}
+          {{form.as_p}}
+        </div>
+        <button type="submit" class='save btn btn-primary custom-btn btn-lg'>Add Embedded Video</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script>var editor = new MediumEditor('.editable');</script>
+{% endblock %}

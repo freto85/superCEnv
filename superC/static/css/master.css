@@ -1,0 +1,737 @@
+.title-merits {
+  font-family: 'Squada One', cursive;
+  color: #dfcde5 !important;
+  /** background: rgb(81,42,92);
+  background: linear-gradient(90deg, rgba(81,42,92,1) 10%, rgba(0,0,0,1) 42%, rgba(40,34,83,1) 54%, rgba(6,41,102,1) 66%, rgba(111,3,116,1) 100%); **/
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 5%, rgba(54,54,98,1) 54%, rgba(0,0,0,1) 100%);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 0px;
+  font-size:5em !important;
+  text-align: center;
+}
+
+#media-pictures {
+
+};
+
+#media-videos {
+
+};
+
+#media-audio {
+  ;
+}
+
+/* ||||||  FONTS  ||||||  */
+
+.squada-font {
+  font-family: 'Squada One', cursive;
+}
+
+.yanone-font {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.share-tech-font {
+  font-family: 'Share Tech', sans-serif;
+}
+
+.russo-one-font.navbar-base {
+  font-size:1.1em !important;
+  text-shadow: -1px 0 black, 0 2px #45284d, 2px 0 #45284d, 0 -1px #45284d;
+  border-bottom: 2px solid #b3b3ff !important; margin-top:0px !important; position:fixed;
+
+}
+
+.font-color {
+  color: #E69A8DFF !important;
+}
+
+.font-color2 {
+  color: #b3b3ff !important;
+}
+
+.russo-one-font {
+  font-family: 'Russo One', sans-serif;
+}
+
+.amatic-sc-font {
+  font-family: 'Amatic SC', cursive;
+}
+
+.archivo-black-font {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.jumbo-background-one {
+  margin-top: 40px;
+  background: rgb(0,0,0);
+  background: linear-gradient(135deg, rgba(0,0,0,1) 5%, rgba(112,37,171,1) 23%, rgba(40,14,74,1) 46%, rgba(160,113,205,1) 98%);
+  border: 4px solid #BFADD8;
+}
+
+#medal {
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 5%, rgba(54,54,98,1) 54%, rgba(0,0,0,1) 100%);
+}
+
+.tabs-merit-background{
+  background: rgb(62,14,75);
+  background: linear-gradient(90deg, rgba(62,14,75,1) 5%, rgba(74,74,128,1) 54%, rgba(43,12,57,1) 100%);
+
+
+}
+.merits-font-username{
+  /* font-family: 'Squada One', cursive; */
+  /* font-size:2.5em !important; */
+  color: #dfcde5 !important;
+  background-color: #341a3b;
+  text-align: center;
+  margin-top: 0px;
+  border-bottom: 0px !important;
+}
+
+.tabs-merits-font {
+  /* font-family: 'Squada One', cursive; */
+  color: #dfcde5 !important;
+  border-bottom: 2px solid #45284d;
+  text-shadow: -1px 0 #45284d, 0 2px #45284d, 2px 0 #45284d, 0 -1px #45284d;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 0px;
+  font-size:3.5em !important;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: float;
+}
+
+
+.navbar .nav, .navbar .nav > li {
+ float:none;
+ display:inline-block;
+ *display:inline; /* ie7 fix */
+ *zoom:1; /* hasLayout ie7 trigger */
+ vertical-align: top;
+}
+
+.btn-primary.custom-btn {
+  background-color: #51098D !important;
+  color: #E69A8DFF ;
+  border-color: #b3b3ff !important;
+}
+
+
+.font-form-two {
+  font-family: 'Yanone Kaffeesatz', sans-serif !important;
+  font-size: 3em !important;
+  color: #dfcde5 !important;
+}
+
+.font-form {
+  font-family: 'Yanone Kaffeesatz', sans-serif !important;
+  font-size: 1.5em;
+  color: #dfcde5 !important;
+}
+
+.text-muted {
+  color: #dfcde5 !important!
+}
+
+.centerstage{
+  margin-top: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.contentfont {
+  color: #b3b3ff !important;
+  font-size:3.5em !important;
+  text-align: center;
+  border-top: 30px;
+  text-shadow: -1px 0 #45284d, 0 3px #45284d, 4px 0 #45284d, 0 -1px #45284d;
+}
+
+.badges-font-title {
+  background: linear-gradient(90deg, rgba(215,60,249,0.6615021008403361) 0%, rgba(126,126,218,1) 35%, rgba(79,22,105,1) 84%);
+  font-family: 'Squada One', cursive;
+  color: #dfcde5 !important;
+  font-size:3em !important;
+  text-align: center;
+  border-top: 30px;
+}
+
+.nav-buttons-change {
+  background: #681AA8 !important;
+}
+
+.navbar-default {
+  background: #51098D !important;
+  /* background: rgb(63,28,110);
+  background: linear-gradient(90deg, rgba(63,28,110,1) 5%, rgba(0,0,0,1) 100%); */
+}
+
+html {
+  height: 100% !important;
+}
+
+body {
+  height: 100% !important;
+  margin: 0 !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background: #2f3951 !important;
+  /* background: #51098D !important;  /* fallback for old browsers
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29) !important;  /* Chrome 10-25, Safari 5.1-6 *
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.dropdown-color {
+  background-color: #681AA8 !important;
+  color: white !important;
+  text-align: center !important;
+}
+
+.dropdown-color-two {
+  background-color: #681AA8 !important;
+  color: white !important;
+  text-align: center !important;
+  border: 3px solid #681AA8 !important;
+}
+.fa {
+  font-family: 'FontAwesome' !important;
+}
+
+
+@media (min-width: 992px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform:translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
+
+.padding-buttons-navbar {
+  padding: 0px 5px 0px 5px !important;
+  margin: 0px 10px 0px 10px !important;
+}
+
+.padding-buttons-navbar-two {
+  padding: 0px 30px 0px 30px !important;
+  margin: 0px 20px 0 20px !important;
+}
+
+
+
+.padding-dropdown-navbar {
+  padding: 0px 10px 0px 10px !important;
+  float:left !important;
+}
+
+
+.brand-rotate:hover {
+  -webkit-animation: rotation 3s infinite linear;
+}
+
+body {
+		text-align: center;
+		padding: 100px 0 0 0;
+		color: #fff;
+		background: #1d1f20;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotateY(0deg);
+		}
+		to {
+				-webkit-transform: rotateY(359deg);
+		}
+}
+
+.loading:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+}
+
+.badgesbox {
+  margin-left: 10px;
+  background-color: #8B5FBF;
+}
+
+.badgeborder {
+  display: block;
+  border: 5px solid #643A71;
+  background: rgb(33,33,34);
+  background: radial-gradient(circle, rgba(33,33,34,1) 0%, rgba(145,30,141,1) 100%);
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badges-paragraph {
+  display: flex;
+  justify-content: center;
+  background-color: #643a71;
+  color: #dfcde5 !important;
+  border: 1px solid #45284d;
+  margin-top: 5px;'
+}
+
+.triangle-up {
+  position: relative;
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid #555;
+}
+
+  .well-test {
+    margin-left: 50px;
+    margin-bottom: 50px;
+    display:block;
+    position: relative;
+    border: 8px solid #643a71;
+    height: 760px;
+    width: 1600px;
+    margin-top: 40px;
+    background-image: url('../images/Unlocks/roadmap2.png');
+    background-repeat: no-repeat;
+
+  }
+
+.unlock-icon {
+  position: relative !important;
+  height: 128px !important;
+  width: 128px !important;
+  background-color: white !important;
+  border-radius: 50%;
+}
+
+#game-of-life {
+  background-image: url('../images/Unlocks/gameoflifes.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 59px !important;
+  margin-top: 85px;
+
+}
+
+#locked-one {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 59px !important;
+  margin-top: 85px;
+
+}
+
+#scrabble {
+  background-image: url('../images/Unlocks/scrabble.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 59px !important;
+  margin-top: 280px;
+
+}
+
+#movie-1 {
+  background-image: url('../images/Unlocks/walter_mitty.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 59px !important;
+  margin-top: 590px;
+}
+
+#locked-two {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 59px !important;
+  margin-top: 590px;
+
+}
+
+#heave-ho {
+  background-image: url('../images/Unlocks/heave_ho.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 290px !important;
+  margin-top: 40px;
+
+}
+
+#locked-three {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 290px !important;
+  margin-top: 40px;
+
+}
+
+
+
+#monopoly {
+  background-image: url('../images/Unlocks/monopoly.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 290px !important;
+  margin-top: 210px !important;
+
+}
+
+#locked-four {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 290px !important;
+  margin-top: 210px !important;
+
+}
+
+
+#dart-board {
+  background-image: url('../images/Unlocks/Dartboard.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 290px !important;
+  margin-top: 385px !important;
+}
+
+#locked-five {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 290px !important;
+  margin-top: 385px !important;
+}
+
+#movie-2 {
+  background-image: url('../images/Unlocks/big_fish.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 290px !important;
+  margin-top: 590px;
+}
+
+#locked-six {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 290px !important;
+  margin-top: 590px;
+}
+
+#human-fall-flat {
+  background-image: url('../images/Unlocks/hff.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 512px !important;
+  margin-top: 40px;
+
+}
+
+#locked-seven {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 512px !important;
+  margin-top: 40px;
+}
+
+#jenga {
+  background-image: url('../images/Unlocks/jenga.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 512px !important;
+  margin-top: 385px;
+
+}
+
+#locked-eight {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 512px !important;
+  margin-top: 385px;
+
+}
+
+
+#cinema {
+  background-image: url('../images/Unlocks/cinema.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 556px !important;
+  margin-top: 210px;
+
+}
+
+#locked-nine {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 556px !important;
+  margin-top: 210px;
+}
+
+#movie-3 {
+  background-image: url('../images/Unlocks/warm_bodies.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 512px !important;
+  margin-top: 590px;
+}
+
+#locked-ten {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 512px !important;
+  margin-top: 590px;
+}
+
+#stick-fight {
+  background-image: url('../images/Unlocks/stick_fight.png') !important;
+  position: absolute !important;
+  margin-left: 748px !important;
+  margin-top: 131px;
+
+}
+
+#locked-eleven {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 748px !important;
+  margin-top: 131px;
+}
+
+#operation {
+  background-image: url('../images/Unlocks/operation.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 748px !important;
+  margin-top: 385px;
+
+}
+
+#locked-twelve {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 748px !important;
+  margin-top: 385px;
+}
+
+#movie-4 {
+  background-image: url('../images/Unlocks/the_help.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 748px !important;
+  margin-top: 590px;
+}
+
+#locked-thirteen {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 748px !important;
+  margin-top: 590px;
+}
+
+#pikuniku {
+  background-image: url('../images/Unlocks/pikuniku.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 961px !important;
+  margin-top: 40px;
+
+}
+
+#locked-fourteen {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 961px !important;
+  margin-top: 40px;
+}
+
+
+
+#battleship {
+  background-image: url('../images/Unlocks/battleship.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 961px !important;
+  margin-top: 440px;
+
+}
+
+#locked-fifteen {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 961px !important;
+  margin-top: 440px;
+}
+
+#keep-talking {
+  background-image: url('../images/Unlocks/keeptalking.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 961px !important;
+  margin-top: 239px;
+
+}
+
+#locked-sixteen {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 961px !important;
+  margin-top: 239px;
+}
+
+#movie-5 {
+  background-image: url('../images/Unlocks/gwh.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 961px !important;
+  margin-top: 590px;
+}
+
+#locked-seventeen {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 961px !important;
+  margin-top: 590px;
+}
+
+#lovers-dangerous {
+  background-image: url('../images/Unlocks/lovers_dangerous.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 1165px !important;
+  margin-top: 40px;
+}
+
+#locked-eighteen {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 1165px !important;
+  margin-top: 40px;
+}
+
+#chemistry-set {
+  background-image: url('../images/Unlocks/chemistry_set.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 1165px !important;
+  margin-top: 440px;
+}
+
+#locked-nineteen {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 1165px !important;
+  margin-top: 440px;
+}
+
+#escape-room {
+  background-image: url('../images/Unlocks/escape_room.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 1165px !important;
+  margin-top: 239px;
+}
+
+#locked-twenty {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 1165px !important;
+  margin-top: 239px;
+}
+
+
+#baking-time {
+  background-image: url('../images/Unlocks/cooking.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 1165px !important;
+  margin-top: 590px;
+}
+
+#locked-twenty-one {
+  background-image: url('../images/Unlocks/locked.jpg') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 1165px !important;
+  margin-top: 590px;
+}
+
+#final-challenge {
+  background-image: url('../images/Unlocks/placeholder.png') !important;
+  background-position: auto;
+  position: absolute !important;
+  margin-left: 1392px !important;
+  margin-top: 275px !important;
+}
+
+#roadmap-table {
+  background-image: linear-gradient(120deg, rgba(161, 196, 253 ,0.4) 70%, #c2e9fb 100%);
+  background-position: auto;
+  position: absolute !important;
+  border: 5px solid #4A97D7  ;
+  color: #DBE9F5  ;
+  height: 165px !important;
+  width: 240px !important;
+  position: absolute !important;
+  margin-left: 1320px !important;
+  margin-top: 20px;
+  font-family: 'Archivo Black', sans-serif;
+  text-shadow: -1px 0 #4A97D7, 0 1px#4A97D7, 1px 0 #4A97D7, 0 -1px #4A97D7;
+}

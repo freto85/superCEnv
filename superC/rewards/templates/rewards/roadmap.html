@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="well-test">
+  <button id='game-of-life' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Game of Life</strong>'
+  data-content="Unlocks <strong>The Game of Life</strong>. A game that simulates
+   a person's journey through life.<br><strong>Requirements:</strong><li>1 Trophy.</li><p style='text-align: center; background-color: black; color: white; margin-top: 10px;'>Games Won: {{ user.game_of_life_won }}</p>"
+   name="button">
+    <img href='{% static "images/unlocks/gameoflife.jpg" %}'></img>
+  </button>
+
+  <button id='scrabble' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='Scrabble' data-content="Unlocks <strong>scrabble
+  </strong>. This is a game in which your vocabulary is rewarded.<br><strong>Requirements:</strong>
+  <li>Free.</li><p style='text-align: center; background-color: black; color: white; margin-top: 10px;'>Top Score: {{ user.scrabble_points }}</p>" name="button"> <img href='{% static "images/unlocks/scrabble.jpg" %}'>
+  </img>
+  </button>
+
+  <button id='movie-1' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Movie 1</strong>' data-content='Unlocks the movie
+  <strong>The Secret Life of Walter Mitty</strong>. A movie about a man who decides
+  to start living his life at its fullest.<br><strong>Requirements:</strong><li>3 Trophies.</li>
+  <li>2 Bronze Medals.</li>' name="button"> <img href='{% static "images/unlocks/walter_mitty.png" %}'>
+  </img>
+  </button>
+
+  <button id='heave-ho' class='unlock-icon' type="button" data-html='true'
+  data-html='true' data-toggle='popover' title='<strong>Heave Ho!</strong>'
+  data-content='Unlocks <strong>Heave Ho!</strong>. A game in which two or more
+  players co-operate to avoid falling to their deaths.<br><strong>Requirements:</strong>
+  <li>3 Bronze Medals.</li><li>2 Trophies.</li><li>Win 1 game of <strong>The Game of Life.</strong>
+  </li><p style="text-align: center; background-color: black; color: white; margin-top: 10px;"">
+  Worlds Cleared: {{ user.heave_ho_worlds }}</p>' name="button"> <img href=
+  '{% static "images/unlocks/big_fish.png" %}'></img>
+  </button>
+
+  <button id='monopoly' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Monopoly</strong>' data-content=
+  'Unlocks <strong>Monopoly</strong>. This is a board game in which you manage
+  properties and learn to hate your friends.<br><strong>Requirements:</strong><li>3 Bronze
+  Medals.</li><li>3 Trophies.</li><li>1 Sticker.</li><li>Clear 2 Worlds at <strong>Heave
+  Ho!</strong></li><p style="text-align: center; background-color: black; color: white;
+   margin-top: 10px;">Games Won: {{ user.monopoly_won }}</p>' name="button">
+    <img href='{% static "images/unlocks/monopoly.png" %}'></img>
+  </button>
+
+  <button id='dart-board' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Darts!</strong>' data-content='Unlocks
+  <strong>Magnetic Darts!</strong>. Work on your aim to win at this game!<br>
+  <strong>Requirements:</strong><li>3 Bronze Medals.</li><li>2 Trophies.</li><li>1 Sticker.</li>
+  <li>Score 100 points at <strong>Scrabble</strong>.</li><p style="text-align: center; background-color: black;
+  color: white; margin-top: 10px;">Top Score: {{ user.max_dart_points }}</p>' name="button"> <img href='{% static
+  "images/unlocks/Dartboard.jpg" %}'></img>
+  </button>
+
+  <button id='movie-2' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Movie 2</strong>' data-content="Unlocks the movie
+  <strong>Big Fish</strong>. This movie tells the story of Edward Bloom. A salesman
+  with a gift for storytelling.<br> <strong>Requirements:</strong><li>Watch <strong>Walter Mitty.</strong></li><li>4 Bronze Medals.</li><li>5 trophies.
+  </li><li>2 Stickers.</li>" name="button"> <img href='{% static "images/unlocks/big_fish.png" %}'>
+  </img>
+  </button>
+
+
+  <button id='human-fall-flat' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Human Fall Flat</strong>' data-content='A
+   platformer-puzzle video game in which you control a person and solve puzzles<br>
+   <strong>Requirements:</strong><li>Get every Bronze Medal.</li><li>2 Silver Medals.</li><li>5 trophies.
+   </li><li>2 Stickers.</li><li>Have <strong>Heave Ho!</strong> Unlocked!</li>
+   <p style="text-align: center; background-color: black; color: white; margin-top: 10px;">
+    Worlds Cleared: {{ user.human_fall_flat_worlds }}</p>' name="button">
+    <img href='{% static "images/unlocks/hff.png" %}'></img>
+  </button>
+
+  <button id='cinema' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>To the Movies!</strong>' data-content='Unlocks <strong> A
+   Trip to the Cinema</strong>. Hard Work should be rewarded accordingly. In this case, it will
+   rewarded with popcorn and cinema!<br><strong>Requirements:</strong><li>3 Silver Medals.</li><li>4 Stickers.</li><li>Win a game of <strong>Monopoly</strong>.</li><li>Clear a World at <strong>Human Fall Flat</strong>.</li><li>Win 3 <strong>Jenga</strong> matches.</li>' name="button">
+  <img href='{% static "images/unlocks/cinema.jpg" %}'></img>
+  </button>
+
+  <button id='jenga' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>Jenga</strong>' data-content='Unlocks <strong>Jenga</strong>.
+   A physical skill game in which you try to remove pieces out of a tower without making it fall<br>
+   <strong>Requirements:</strong><li>Get every Bronze Medal.</li><li>1 Silver Medal.</li><li>5 Trophies.</li><li>
+   2 Stickers.</li><li>Score more than 100 points at <strong>Darts!</strong></li><p style="text-align: center; background-color: black;
+   color: white; margin-top: 10px;">Matches Won: {{ user.jenga_won }}</p>' name="button"><img href=
+   '{% static "images/unlocks/jenga.jpg" %}'></img>
+  </button>
+
+  <button id='movie-3' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>Movie 3</strong>' data-content= 'Unlocks the movie <strong>
+    Warm Bodies</strong>. This is a zombie comedy movie about Julie, a young woman, and a
+    zombie named"R", and how they fall in love.<br><strong>Requirements:</strong>
+  <li>Watch <strong>Big Fish</strong></li><li>Get every Bronze Medal.</li>
+  <li>8 Trophies.</li><li>3 Stickers.</li>' name="button">
+  <img href='{% static "images/unlocks/warm_bodies.png" %}'></img>
+  </button>
+
+  <button id='stick-fight' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>Stick Fight: The Game</strong>' data-content='Unlocks <strong>
+  Stick Fight: The Game</strong>. Challenge your teacher to a fight to the <strong>DEATH!
+  </strong> (not a real one, of course).<br><strong>Requirements:</strong><li>Get every Silver Medal.</li>
+  <li>3 Gold Medals.</li><li>10 Trophies.</li><li>5 Stickers.</li><li>Complete the <strong>Cinema Event</strong>.</li>
+  <p style="text-align: center; background-color: black; color: white; margin-top: 10px;">
+  Fights Won: {{ user.stick_fight_won }}</p>' name="button"><img href='{% static "images/unlocks/stick_fight.png" %}'>
+  </img>
+  </button>
+
+  <button id='operation' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>Operation</strong>' data-content='Unlocks <strong>Operation!
+  </strong>. In this hand-eye coordination game, you have to remove organs from a person
+  very carefully!<br><strong>Requirements:</strong><li>Get every Silver Medal.</li><li>2 Gold Medals.</li>
+  <li>10 Trophies.</li><li>6 Stickers.</li><li>Complete the <strong>Cinema Event</strong>.</li>
+  <p style="text-align: center; background-color: black; color: white; margin-top: 10px;">
+  Games Won: {{ user.operation_won }}</p>' name="button"> <img href='{% static
+  "images/unlocks/operation.jpg" %}'></img>
+  </button>
+
+  <button id='movie-4' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>Movie 4</strong>' data-content='Unlocks the movie <strong>
+  The Help</strong>. This movie recounts the story of a young journalist who writes
+  a book exposing the racism black people faced in Mississippi.<br><strong>Requirements:</strong><li>Watch <strong> Warm Bodies</strong>.</li><li>
+    Get every Silver Medal.</li><li>3 Gold Medals.</li><li>10 Trophies.</li>
+    <li>6 Stickers.</li>' name="button"> <img href='{% static "images/unlocks/the_help.png" %}'>
+  </img>
+  </button>
+
+  <button id='pikuniku' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>Pikuniku</strong>' data-content='Unlocks <strong>Pikuniku
+  </strong>. This is a game about two armless creatures that have to solve
+  puzzles to succeed.<br><strong>Requirements:</strong><li>Get every Gold Medal.</li><li>1 Platinum
+  Medal.</li><li>12 Trophies.</li><li>8 Stickers.</li><li>Win at <strong>Stick Fight</strong> 10
+  times!</li><p style="text-align: center; background-color: black; color: white; margin-top: 10px;">
+  Levels Cleared: {{ user.pikuniku_levels }}</p>' name="button"><img href='{% static "images/unlocks/pikuniku.jpg" %}'>
+  </img>
+  </button>
+
+  <button id='keep-talking' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>Keep talking and Nobody explodes</strong>' data-content=
+  'Unlocks <strong>Keep Talking and Nobody Explodes</strong>. Work as a Team to
+  defuse a bomb. One of you gets a manual, the other one is in charge of disarming
+  the bomb. Time is of the essence.<br><strong>Requirements:</strong>
+  <li>3 Platinum Medals.</li><li>15 Trophies.</li><li> 8 Stickers.</li>
+  <li>Clear three levels of <strong>Pikuniku</strong>.</li>
+  <li>Win 2 times at <strong>Battleship</strong>.</li>' name="button">
+  <img href='{% static "images/unlocks/keeptalking.jpg" %}'></img>
+  </button>
+
+  <button id='battleship' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>Battleship</strong>' data-content='Unlock <strong>Battleship:
+  The game</strong>. Sink the enemies ship before the enemy sinks yours!<br><strong>Requirements:</strong>
+  <li>Get every Gold Medal.</li><li>2 Platinum.</li><li>13 Trophies.</li><li>
+  7 Stickers.</li><li>Win a game of <strong>Operation</strong>.</li><p style="text-align: center;
+  background-color: black; color: white; margin-top: 10px;">Games Won: {{ user.battleship_won }}</p>'
+  name="button"><img href='{% static "images/unlocks/battleship.png" %}'></img>
+  </button>
+
+  <button id='movie-5' class='unlock-icon' type="button" data-html='true' data-toggle=
+  'popover' title='<strong>Movie 5</strong>' data-content='Unlock <strong> Reign Over Me
+  </strong>. A movie about Charlie Fineman. A dentist whose family died in 9/11.<br>
+  <strong>Requirements:</strong><li>Watch <strong>The Help</strong>.</li><li>Get every Gold Medal.</li><li>Get 4 Platinum Medals.</li><li>15 Trophies.
+  </li><li>8 Stickers.</li>' name="button"> <img href='{% static "images/unlocks/gwh.png" %}'>
+  </img>
+  </button>
+
+  <button id='lovers-dangerous' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Lovers in a Dangerous Spacetime</strong>'
+  data-content='Unlock <strong>Lovers Dangerous Spacetime</strong>. A Co-Op game about piloting
+  a ship through space. Survival lies in cooperation.<br><strong>Requirements:</strong><li>Get every
+  Platinum Medal.</li><li>Get 2 Diamond Medals</li><li>18 Trophies</li><li>10 Stickers</li>
+  <li>Clear 4 levels of <strong>Pikuniku</strong>.</li><p style="text-align: center; background-color: black; color: white; margin-top: 10px;">Levels Cleared: {{ user.lovers_levels }}</p>' name="button"><img href='{% static "images/
+  unlocks/lovers_dangerous.png" %}'></img>
+  </button>
+
+  <button id='escape-room' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Escape the Room</strong>' data-content=
+  'Unlock the <strong>Escape the Room!</strong> event. Escape the room is real-life
+  escape game in which players must work together to escape a room before time runs
+  out.<br><strong>Requirements:</strong><li>4 Diamond Medals.</li><li>20 Trophies</li><li>12 Stickers
+  </li><li>Succesfully defuse a bomb.</li><li>Complete a Level in <strong>L.I.A.D.S.T.</strong></li><li>Succesfully perform a <strong>Chemistry Experiment</strong>' name="button"><img href='{% static
+  "images/unlocks/escape_room.png" %}'></img>
+  </button>
+
+  <button id='chemistry-set' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Chemistry Set</strong>' data-content=
+  'Unlock the <strong>Chemistry Set</strong>. It is time to play scientists and
+  perform some experiments!<br><strong>Requirements:</strong><li>Get every Platinum Medal</li><li>
+  2 Diamond Medals</li><li>16 Trophies</li><li>11 Stickers</li><li> Win 3 times at <strong>
+  Battleship</strong>.' name="button"><img href='{% static "images/unlocks/chemistry_set.png" %}'>
+  </img>
+  </button>
+
+  <button id='baking-time' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Baking Time</strong>' data-content=
+  'Unlock <strong>Baking Time!</strong> It is time to learn a baking recipe! Grab
+  your apron!<br><strong>Requirements:</strong><li>Watch <strong>Reign Over Me</strong>.</li><li>Get every Platinum Medal.</li><li>Get 3 Diamond Medals.</li>
+  <li>18 Trophies</li><li>10 Stickers</li>' name="button">
+    <img href='{% static "images/unlocks/cooking.png" %}'></img>
+  </button>
+
+  <button id='final-challenge' class='unlock-icon' type="button" data-html='true'
+  data-toggle='popover' title='<strong>Final Task!</strong>' data-content=
+  'Unlock <strong>THE FINAL CHALLENGE</strong> To be decided.<br><strong>Requirements:</strong>
+  <li>Get every Diamond Medal.</li><li>25 Trophies.</li><li>15 Stickers</li>
+  <li>Try to Escape the Room!</li><li>Learn a baking recipe!' name="button">
+    <img href='{% static "images/unlocks/placeholder.png" %}'></img>
+  </button>
+  <div id='roadmap-table' class="container">
+    <p style='margin-top: 5px;'><strong>Medals:</strong><br> B: <span id='bronze'>0</span> S: <span id='silver'>0</span> G:<span id='gold'>0</span> P:<span id='platinum'>0</span> D:<span id='diamond'>0</span>  </p>
+    <p><strong>Trophies:</strong><span id='trophy-number'>0</span></p>
+    <p><strong>Stickers:</strong><span id='sticker-number'>0</span></p>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  var medals = ['{{ user.grammar_skills }}','{{ user.listening_skills }}','{{ user.writing_skills }}','{{ user.vocabulary_skills }}','{{ user.oral_skills }}', '{{ user.reading_skills }}']
+  var trophies = ['{{ user.songs_listened }}','{{ user.songs_sang }}','{{ user.stories_read }}','{{ user.books_finished }}','{{ user.words_learned }}','{{ user.irregular_verbs }}','{{ user.talking_time }}','{{ user.no_spanish_time }}', '{{ user.writing_assignments }}','{{ user.perfect_writing }}','{{ user.book_written }}']
+  var stickers = ['{{ user.monkey_island }}','{{ user.the_last_door }}','{{ user.to_the_moon }}','{{ user.oxenfree }}','{{ user.valiant_hearts }}','{{ user.walter_mitty}}','{{ user.big_fish }}','{{ user.warm_bodies }}','{{ user.the_help }}','{{ user.reign_over_me }}','{{ user.talked_to_native }}','{{ user.cinema_day }}','{{ user.escape_room }}','{{ user.every_event }}']
+  var phonemesLearned = {{ user.phonemes_learned }}
+  var roadmap = ['{{ user.game_of_life_won }}', '{{ user.scrabble_points }}', '{{ user.heave_ho_worlds }}', '{{user.monopoly_won }}', '{{ user.max_dart_points }}', '{{ user.human_fall_flat_worlds }}','{{ user.jenga_won }}','{{ user.stick_fight_won }}','{{ user.operation_won }}','{{ user.pikuniku_levels }}','{{ user.battleship_won }}','{{ user.lovers_levels }}','{{ user.defused_bomb }}','{{ user.chemistry_performed }}','{{ user.baked }}']
+</script>
+<script src='{% static 'js/merits.js' %}'type="text/javascript"></script>
+
+{% endblock %}

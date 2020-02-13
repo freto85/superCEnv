@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
+    <h1 class='contentfont'>New Image</h1>
+    <div class="container firstfont dropdown-color" style='padding:20px;'>
+      <form class="post" enctype="multipart/form-data" method="POST">
+        <div class="container">
+          {% csrf_token %}
+          {{form.as_p}}
+        </div>
+        <button type="submit" class='save btn btn-primary custom-btn btn-lg'>Upload Image File</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script>var editor = new MediumEditor('.editable');</script>
+{% endblock %}

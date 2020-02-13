@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71 !important;">
+    <h1 class='contentfont firstfont dropdown-color' style='margin:10px;border:10px solid #45284d;padding:20px;'>{{ news.title }} <span class='fas fa-newspaper' style='padding-left:10px;'></span></h1>
+
+
+
+    <div class="dropdown-color firstfont" style='margin:10px;border:10px solid #45284d;padding:20px;'>
+        <p class='badges-paragraph ' >{{ news.text|safe|linebreaksbr }}</p>
+    </div>
+
+    {% if user.is_superuser %}
+        <div class="container">
+
+
+          {% if news.published_date %}
+              <a class="btn btn-primary custom-btn btn-lg" href="{% url 'news:edit_news' pk=news.pk %}">Edit News<span class="fa fa-pencil" style='padding-left:10px;'></span></a>
+              <a class="btn btn-primary custom-btn btn-lg" href="{% url 'news:remove_news' pk=news.pk %}">Remove News<span class="fa fa-remove" style='padding-left:10px;'></span></a>
+              <a class='btn btn-primary custom-btn btn-lg' href="{% url 'news:add_comment_to_news' pk=news.pk %}">Add Comment<span class='fas fa-comment' style='padding-left:10px;'></span></a>
+              <div class="firstfont dropdown-color">
+                  {{ news.published_date }}
+              </div>
+          {% else %}
+                  <a class="btn btn-primary custom-btn btn-lg" href="{% url 'news:edit_news' pk=news.pk %}">Edit Draft<span class="fa fa-pencil" style='padding-left:10px;'></span></a>
+                  <a class="btn btn-primary custom-btn btn-lg" href="{% url 'news:remove_news' pk=news.pk %}">Reject Draft<span class="fa fa-remove" style='padding-left:10px;'></span></a>
+                  <a class ='btn btn-primary custom-btn btn-lg' href="{% url 'news:news_publish' pk=news.pk %}">Publish News <span class='fas fa-edit' style='padding-left:10px;'></span></a>
+
+          {% endif %}
+
+        </div>
+
+    {% endif %}
+      <hr>
+    {% if news.published_date %}
+      <div class="container dropdown-color firstfont" style='margin:10px;border:10px solid #45284d;padding:20px;'>
+        <h1 class='firstfont dropdown-color' style='margin:10px;border:10px solid #45284d;padding:20px;'>Comments <span class='fas fa-comment' style='padding-left:10px;'></span></h1>
+        {% for comment in news.comments.all %}
+          <br>
+            {% if user.is_superuser or comment.approved_comment %}
+              {{comment.created_date }}
+              {% if not comment.approved_comment %}
+                <a class="btn btn-primary custom-btn btn-lg" href="{% url 'news:comment_remove' pk=comment.pk %}"><span class="fa fa-remove"></span></a>
+                <a class="btn btn-primary custom-btn btn-lg" href="{% url 'news:comment_approve' pk=comment.pk %}"><span class="fa fa-check"></span></a>
+              {% endif %}
+            {% endif %}
+
+
+          <p>{{comment.text|safe|linebreaks}}</p>
+          <p>Posted by {{ comment.author }}</p>
+          {% empty %}
+          <p>No comments</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% if comment.approved_comment %}
+    <a class='btn btn-primary custom-btn btn-lg' href="{% url 'news:add_comment_to_news' pk=news.pk %}">Add Comment<span class='fas fa-comment' style='padding-left:10px;'></span></a>
+    {% endif %}
+  </div>
+
+
+</div>
+
+
+{% endblock %}

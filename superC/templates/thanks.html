@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
+    <div class="container">
+      <h1 class="display-4 contentfont">Thank you for visiting! Come back soon!</h1>
+      <div class="dropdown-divider"></div>
+      <div class="container" style="display: flex; justify-content: center;">
+          <img class="col-" style="border:10px solid #45284d; padding: 0px;" src="{% static 'images/loggedin.jpg' %}"></img>
+      </div>
+      <div class="dropdown-divider"></div>
+    </div>
+    <div class="form-row text-center">
+      <div class="col-12">
+        <a class="btn btn-primary btn-lg custom-btn centerstage firstfont" href="{% url 'homepage' %}" role='button'>Back to Homepage</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

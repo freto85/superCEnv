@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <h1 class='contentfont'>Audio</h1>
+  {% for audio in object_list %}
+
+    <div class="container" style='margin-right: auto !important; margin-left: auto !important;'>
+      <h5 class="card-title contentfont">{{ document.title }}</h5>
+      <audio controls>
+        <source src="{{ audio.audio_file.url }}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+      <h5>{{ audio.description }}</h5>
+      <p>{{ audio.uploaded_at }}</p>
+    </div>
+  {% endfor %}
+</div>
+  {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+    <div class="container">
+      <h1 class='contentfont'>Drafts</h1>
+      {% for news in news_list %}
+        <div class="container">
+          <hr>
+          <h1 class='firstfont dropdown-color'><a href="{% url 'news:detail_news' pk=news.pk %}" style='color:inherit'>Draft Name: {{ news.title }}</a></h1>
+          <p class='badges-paragraph'>created: {{ news.created_date|date:'d-m-Y'}}</p>
+
+
+        </div>
+      {% endfor %}
+{% endblock %}

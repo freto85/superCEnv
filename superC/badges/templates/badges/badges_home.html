@@ -1,0 +1,768 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+    <h1 class='title-merits'>Achievements Section</h1>
+
+    <ul class="nav nav-pills tabs-merit-background" style="margin-top: 0px; color:inherit;">
+      <li class='nav-item tabs-merits-font col-md'><a class='nav-link' data-toggle="pill" style='color: inherit;' href="#medals">Medals</a></li>
+      <li class='nav-item tabs-merits-font col-md'><a class='nav-link' data-toggle="pill" style='color: inherit;' href="#trophies">Trophies</a></li>
+      <li class='nav-item tabs-merits-font col-md'><a class='nav-link' data-toggle="pill" style='color: inherit;' href="#stickers">Stickers</a></li>
+    </ul>
+    <div class="tab-content">
+      <!-- Row Medals -->
+      <div id="medals" class="tab-pane fade ">
+        <div class="container">
+          <h3 class='badges-font-title'>Grammar Medals</h3>
+          {% if user.grammar_skills < 100 %}
+              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 100p</p>
+          {% elif user.grammar_skills < 250 %}
+              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 250p</p>
+          {% elif user.grammar_skills < 500 %}
+              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 500p</p>
+          {% elif user.grammar_skills < 800 %}
+              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 800p</p>
+          {% elif user.grammar_skills < 1200 %}
+              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 1200p</p>
+          {% else %}
+              <p class='badges-paragraph'>Score: Maximum Level</p>
+          {% endif %}
+          <div class="row badgeborder">
+            <div class="col badgeborder">
+              {% if user.grammar_skills < 100 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_grammar.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.grammar_skills < 250 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else  %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_grammar.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.grammar_skills < 500 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_grammar.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.grammar_skills < 800 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_grammar.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.grammar_skills < 1200 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_grammar.png' %}"  alt="">
+              {% endif %}
+            </div>
+          </div>
+          <h3 class='badges-font-title '>Listening Medals</h3>
+          {% if user.listening_skills < 100 %}
+              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 100p</p>
+          {% elif user.listening_skills < 250 %}
+              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 250p</p>
+          {% elif user.listening_skills < 500 %}
+              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 500p</p>
+          {% elif user.listening_skills < 800 %}
+              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 800p</p>
+          {% elif user.listening_skills < 1200 %}
+              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 1200p</p>
+          {% else %}
+              <p class='badges-paragraph'>Score: Maximum Level</p>
+          {% endif %}
+          <div class="row">
+            <div class="col badgesbox">
+              {% if user.listening_skills < 100 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_listening.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.listening_skills < 250 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_listening.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.listening_skills < 500 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_listening.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.listening_skills < 800 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_listening.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.listening_skills < 1200 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_listening.png' %}"  alt="">
+              {% endif %}
+            </div>
+          </div>
+          <h3 class='badges-font-title'>Writing Medals</h3>
+          {% if user.writing_skills < 100 %}
+              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 100p</p>
+          {% elif user.writing_skills < 250 %}
+              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 250p</p>
+          {% elif user.writing_skills < 500 %}
+              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 500p</p>
+          {% elif user.writing_skills < 800 %}
+              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 800p</p>
+          {% elif user.writing_skills < 1200 %}
+              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 1200p</p>
+          {% else %}
+              <p class='badges-paragraph'>Score: Maximum Level</p>
+          {% endif %}
+          <div class="row">
+            <div class="col badgesbox">
+              {% if user.writing_skills < 100 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_writing.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.writing_skills < 250 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_writing.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.writing_skills < 500 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_writing.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.writing_skills < 800 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_writing.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.writing_skills < 1200 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_writing.png' %}"  alt="">
+              {% endif %}
+            </div>
+          </div>
+          <h3 class='badges-font-title'>Vocabulary Medals</h3>
+          {% if user.vocabulary_skills < 100 %}
+              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 100p</p>
+          {% elif user.vocabulary_skills < 250 %}
+              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 250p</p>
+          {% elif user.vocabulary_skills < 500 %}
+              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 500p</p>
+          {% elif user.vocabulary_skills < 800 %}
+              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 800p</p>
+          {% elif user.vocabulary_skills < 1200 %}
+              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 1200p</p>
+          {% else %}
+              <p class='badges-paragraph'>Score: Maximum Level</p>
+          {% endif %}
+          <div class="row ">
+            <div class="col badgesbox">
+              {% if user.vocabulary_skills < 100 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_vocabulary.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.vocabulary_skills < 250 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_vocabulary.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.vocabulary_skills < 500 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_vocabulary.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.vocabulary_skills < 800 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_vocabulary.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.vocabulary_skills < 1200 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_vocabulary.png' %}"  alt="">
+              {% endif %}
+            </div>
+          </div>
+          <h3 class='badges-font-title'>Speaking Medals</h3>
+          {% if user.oral_skills < 100 %}
+              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 100p</p>
+          {% elif user.oral_skills < 250 %}
+              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 250p</p>
+          {% elif user.oral_skills < 500 %}
+              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 500p</p>
+          {% elif user.oral_skills < 800 %}
+              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 800p</p>
+          {% elif user.oral_skills < 1200 %}
+              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 1200p</p>
+          {% else %}
+              <p class='badges-paragraph'>Score: Maximum Level</p>
+          {% endif %}
+          <div class="row ">
+            <div class="col badgesbox">
+              {% if user.oral_skills < 100 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_speaking.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.oral_skills < 250 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_speaking.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.oral_skills < 500 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_speaking.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.oral_skills < 800 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_speaking.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.oral_skills < 1200 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_speaking.png' %}"  alt="">
+              {% endif %}
+            </div>
+          </div>
+          <h3 class='badges-font-title'>Reading Medals</h3>
+          {% if user.reading_skills < 100 %}
+              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 100p</p>
+          {% elif user.reading_skills < 250 %}
+              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 250p</p>
+          {% elif user.reading_skills < 500 %}
+              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 500p</p>
+          {% elif user.reading_skills < 800 %}
+              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 800p</p>
+          {% elif user.reading_skills < 1200 %}
+              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 1200p</p>
+          {% else %}
+              <p class='badges-paragraph'>Score: Maximum Level</p>
+          {% endif %}
+          <div class="row ">
+            <div class="col badgesbox">
+              {% if user.reading_skills < 100 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_reading.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.reading_skills < 250 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_reading.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.reading_skills < 500 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_reading.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.reading_skills < 800 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_reading.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if user.reading_skills < 1200 %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+              {% else %}
+                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_reading.png' %}"  alt="">
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="trophies" class="tab-pane fade ">
+      <div class="container">
+        <h1 class='contentfont' style='display: flex; justify-content: center; background-color: #8B5FBF; padding-top:12px; border: 5px solid #45284d ;'><span class="fas fa-trophy" style='padding-right:30px;'></span>Trophies Earned: <span id='trophy-number'></span></h1>
+      </div>
+      <div class="container">
+        <div class="row ">
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Listen to 5 Songs</p>
+            {% if user.songs_listened >= 5 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/listen_five_songs.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Listen to 10 Songs</p>
+            {% if user.songs_listened >= 10 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/listen_ten_songs.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Listen to 20 Songs</p>
+            {% if user.songs_listened >= 20 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/listen_twenty_songs.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            {% if user.songs_sang > 0 %}
+              <p class='badges-paragraph'>Sang a Song</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/sing_one_song.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <p class='badges-paragraph'>???</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+              <p class='badges-paragraph'>Secret</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            {% if user.songs_sang >= 5 %}
+              <p class='badges-paragraph'>Sang 5 Songs</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/sing_five_songs.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <p class='badges-paragraph'>???</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+              <p class='badges-paragraph'>Secret</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Read 1 Short Story</p>
+            {% if user.stories_read > 0 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/read_one_story.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Read 5 Short Stories</p>
+            {% if user.stories_read >= 5 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/read_five_stories.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Read 8 Short Stories</p>
+            {% if user.stories_read >= 8 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/read_eight_stories.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            {% if user.books_finished > 0 %}
+              <p class='badges-paragraph'>Finished A Book</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/read_a_book.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <p class='badges-paragraph'>???</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+              <p class='badges-paragraph'>Secret</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            {% if user.books_finished >= 3 %}
+              <p class='badges-paragraph'>Finished 3 Books</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/read_second_book.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <p class='badges-paragraph'>???</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+              <p class='badges-paragraph'>Secret</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Learned 20 words</p>
+            {% if user.words_learned >= 20 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/learned_twenty_words.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Learned 50 words</p>
+            {% if user.words_learned >= 50 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/learned_fifty_words.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Learned 100 words</p>
+            {% if user.words_learned >= 100 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/learned_hundred_words.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Learned 200 words</p>
+            {% if user.words_learned >= 200 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/learned_two_hundred_words.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            {% if user.irregular_verbs >= 50 %}
+              <p class='badges-paragraph'>Learn 50 I. Verbs</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/fifty_irregular_verbs.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <p class='badges-paragraph'>???</p>
+              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+              <p class='badges-paragraph'>Secret</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Talked for 5 hours</p>
+            {% if user.talking_time >= 5 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/talked_two_hours.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Talked for 12 hours</p>
+            {% if user.talking_time >= 12 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/talked_five_hours.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Talked for 20 hours</p>
+            {% if user.talking_time >= 20 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/talked_ten_hours.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>No Spanish 5hs</p>
+            {% if user.no_spanish_time >= 5 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/no_spa_five.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>No Spanish 10hs</p>
+            {% if user.no_spanish_time >= 10 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/no_spa_ten.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Three Writings</p>
+            {% if user.writing_assignments >= 3 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/three_writings.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Ten Writings</p>
+            {% if user.writing_assignments >= 10 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/ten_writings.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Twenty Writings</p>
+            {% if user.writing_assignments >= 20 %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/twenty_writings.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Perfect Writing</p>
+            {% if user.perfect_writing == True %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/perfect_writing.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+          <div class="col badgesbox">
+            <p class='badges-paragraph'>Wrote a Book</p>
+            {% if user.book_written == True %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/writing_book.png' %}"  alt="">
+              <p class='badges-paragraph'>Achieved</p>
+            {% else %}
+              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+              <p class='badges-paragraph'>Not Achieved</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      </div>
+      <div id="stickers" class="tab-pane fade">
+        <div class="container">
+          <h1 class='contentfont' style='display: flex; justify-content: center; background-color: #8B5FBF; padding-top:12px; border: 5px solid #45284d ;'><span class="fas fa-certificate" style='padding-right:30px;'></span>Stickers Earned: <span id='sticker-number'>0</span></h1>
+        </div>
+        <div class="container">
+          <h2 class='firstfont dropdown-color'> Videogames <span class='fas fa-gamepad'></span> </h2>
+        </div>
+        <div class="container">
+          <div class="row ">
+            <div class="col badgesbox">
+              {% if user.monkey_island == True %}
+                <p class='badges-paragraph'>Monkey Island</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/mi_completed.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.the_last_door == True %}
+                <p class='badges-paragraph'>The Last Door</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/tld_completed.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.to_the_moon == True %}
+                <p class='badges-paragraph'>To The Moon</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/ttm_completed.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.oxenfree == True %}
+                <p class='badges-paragraph'>Oxenfree</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/of_completed.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.valiant_hearts == True %}
+                <p class='badges-paragraph'>Valiant Hearts</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/vh_completed.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <h2 class='firstfont dropdown-color'> Films <span class='fas fa-film'></span></h2>
+        </div>
+        <div class="container">
+          <div class="row ">
+            <div class="col badgesbox">
+              {% if  user.walter_mitty == True %}
+                <p class='badges-paragraph'>Walter Mitty</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/wm_watched.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.big_fish == True %}
+                <p class='badges-paragraph'>Big Fish</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/bf_watched.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.warm_bodies == True %}
+                <p class='badges-paragraph'>Warm Bodies</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/wb_watched.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.the_help == True %}
+                <p class='badges-paragraph'>The Help</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/th_watched.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.reign_over_me == True %}
+                <p class='badges-paragraph'>Reign Over Me</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/gwh_watched.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>Locked</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <h2 class='firstfont dropdown-color'> Secrets <span class='fas fa-mask'></span></h2>
+        </div>
+        <div class="container">
+          <div class="row ">
+            <div class="col badgesbox">
+              {% if  user.phonemes_learned >= 44 %}
+                <p class='badges-paragraph'>Learned All Phonemes</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/all_phonemes.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>???</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.talked_to_native == True %}
+                <p class='badges-paragraph'>Talked to a Native</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/talk_native.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>???</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.cinema_day == True %}
+                <p class='badges-paragraph'>Went to the cinema </p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/cinema.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>???</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.escape_room == True %}
+                <p class='badges-paragraph'>Escaped A Room</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/escape_room.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>???</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+              {% endif %}
+            </div>
+            <div class="col badgesbox">
+              {% if  user.every_event == True %}
+                <p class='badges-paragraph'>Completed All Events</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/special_completed.png' %}"  alt="">
+              {% else %}
+                <p class='badges-paragraph'>???</p>
+                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var medals = ['{{ user.grammar_skills }}','{{ user.listening_skills }}','{{ user.writing_skills }}','{{ user.vocabulary_skills }}','{{ user.oral_skills }}', '{{ user.reading_skills }}']
+  var trophies = ['{{ user.songs_listened }}','{{ user.songs_sang }}','{{ user.stories_read }}','{{ user.books_finished }}','{{ user.words_learned }}','{{ user.irregular_verbs }}','{{ user.talking_time }}','{{ user.no_spanish_time }}', '{{ user.writing_assignments }}','{{ user.perfect_writing }}','{{ user.book_written }}']
+  var stickers = ['{{ user.monkey_island }}','{{ user.the_last_door }}','{{ user.to_the_moon }}','{{ user.oxenfree }}','{{ user.valiant_hearts }}','{{ user.walter_mitty}}','{{ user.big_fish }}','{{ user.warm_bodies }}','{{ user.the_help }}','{{ user.reign_over_me }}','{{ user.talked_to_native }}','{{ user.cinema_day }}','{{ user.escape_room }}','{{ user.every_event }}']
+  var phonemesLearned = {{ user.phonemes_learned }}
+</script>
+<script src='{% static 'js/merits.js' %}'type="text/javascript"></script>
+{% endblock %}

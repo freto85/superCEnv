@@ -1,0 +1,160 @@
+body {
+  padding-top: 130px !important;
+}
+
+.firstfont {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 2em;
+
+}
+
+.account-info-font {
+  font-family: 'Yanone Kaffeesatz', sans-serif !important;
+  font-size: 2em !important;
+  color: #dfcde5 !important;
+}
+
+.second-font {
+  font-family: 'Yanone Kaffeesatz', sans-serif !important;
+  font-size: 3em !important;
+  color: #dfcde5 !important;
+}
+
+.centerstage{
+  margin-top: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.contentfont {
+  font-family: 'Squada One', cursive;
+  color: #dfcde5 !important;
+  font-size:4em !important;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.fontform {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 2em;
+  color: white;
+}
+
+frame-page {
+
+}
+
+.navbar-default {
+  background-color: #643A71;
+  border: 1px;
+}
+
+body {
+  background-color: #d183c9 !important
+}
+
+
+.dropdown-color {
+  background-color: #8B5FBF !important;
+  color: white !important;
+  text-align: center !important;
+}
+
+.dropdown-color-two {
+  background-color: #8B5FBF !important;
+  color: white !important;
+  text-align: center !important;
+  border: 3px solid #45284d !important;
+}
+.fa {
+  font-family: 'FontAwesome' !important;
+}
+
+
+@media (min-width: 992px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform:translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
+
+.padding-buttons-navbar {
+  padding: 0px 10px 0px 10px !important;
+  margin: 0px 20px 0 20px !important;
+}
+
+.padding-dropdown-navbar {
+  padding: 0px 10px 0px 10px !important;
+  float:left !important;
+}
+
+
+.brand-rotate:hover {
+  -webkit-animation: rotation 3s infinite linear;
+}
+
+body {
+		text-align: center;
+		padding: 100px 0 0 0;
+		color: #fff;
+		background: #1d1f20;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotateY(0deg);
+		}
+		to {
+				-webkit-transform: rotateY(359deg);
+		}
+}
+
+.loading:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+}
+
+.badgesbox: {
+    border: 2px solid black;
+    color: white;
+}
+
+.boxed {
+  border: 10px solid green;
+}

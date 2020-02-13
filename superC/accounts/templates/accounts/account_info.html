@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+    <div class="container">
+      <h1 class="display-4 contentfont"><span class='fas fa-user-circle'></span> Account Info</h1>
+      <div class="dropdown-divider"></div>
+      <div class="container">
+        <ul class="list-group" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
+          <li class="list-group-item firstfont dropdown-color" style="display: flex; justify-content: center;"><span class='far fa-id-badge'></span>Personal Info</li>
+          <li class="list-group-item dropdown-color">Username: {{ user.username }}</li>
+          <li class="list-group-item dropdown-color">Name: {{ user.first_name }} {{ user.last_name }}</li>
+          <li class="list-group-item dropdown-color">E-Mail Address: {{ user.email }}</li>
+          <li class="list-group-item dropdown-color">Account Creation Date: {{ user.date_joined }}</li>
+        </ul>
+      </div>
+
+      <div class="dropdown-divider"></div>
+
+      <div class="container">
+        <ul class="list-group" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
+          <li class="list-group-item firstfont dropdown-color" style="display: flex; justify-content: center;"><span class='fas fa-info-circle'></span> Merits </li>
+
+          <li class="list-group-item dropdown-color">Bronze Medals Earned: <span id='bronze'>0</span></li>
+          <li class="list-group-item dropdown-color">Silver Medals Earned: <span id='silver'>0</span></li>
+          <li class="list-group-item dropdown-color">Gold Medals Earned: <span id='gold'>0</span></li>
+          <li class="list-group-item dropdown-color">Platinum Medals Earned: <span id='platinum'>0</span></li>
+          <li class="list-group-item dropdown-color">Diamond Medals Earned: <span id='diamond'>0</span></li>
+          <li class="list-group-item dropdown-color">Trophies Unlocked: <span id='trophy-number'>0</span></li>
+          <li class="list-group-item dropdown-color">Stickers Unlocked: <span id='sticker-number'>0</span></li>
+          <div class="dropdown-divider"></div>
+          <li class="list-group-item dropdown-color">Grammar Skills Score: {{ user.grammar_skills }}</li>
+          <li class="list-group-item dropdown-color">Listening Skills Score: {{ user.listening_skills }}</li>
+          <li class="list-group-item dropdown-color">Writing Skills Score: {{ user.writing_skills }}</li>
+          <li class="list-group-item dropdown-color">Vocabulary Skills Score: {{ user.vocabulary_skills }}</li>
+          <li class="list-group-item dropdown-color">Oral Skills Score: {{ user.oral_skills }}</li>
+          <li class="list-group-item dropdown-color">Reading Skills Score: {{ user.reading_skills }}</li>
+        </ul>
+      </div>
+
+      <div class="dropdown-divider"></div>
+
+      <div class="container">
+        <ul class="list-group" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
+          <li class="list-group-item firstfont dropdown-color" style="display: flex; justify-content: center;"><span class='fas fa-info-circle'></span>Other Stats</li>
+
+
+          <li class="list-group-item dropdown-color">Short Stories Read: {{ user.stories_read }}</li>
+          <li class="list-group-item dropdown-color">Books Finished: {{ user.books_finished }}</li>
+          <li class="list-group-item dropdown-color">Words Learned: {{ user.words_learned }}</li>
+          <li class="list-group-item dropdown-color">Irregular Verbs Known: {{ user.irregular_verbs }}</li>
+          <li class="list-group-item dropdown-color">Talking Time: {{ user.talking_time }}</li>
+          <li class="list-group-item dropdown-color">Maximum amount of hours without using Spanish: {{ user.no_spanish_time }}</li>
+          <li class="list-group-item dropdown-color">Writing Assignments Passed: {{ user.writing_assignments }}</li>
+          <li class="list-group-item dropdown-color">Songs Used: {{ user.songs_listened }}</li>
+          <li class="list-group-item dropdown-color">Awards Unlocked: 0</li>
+          <li class="list-group-item dropdown-color">Events Finished: 0</li>
+          {% if user.songs_sang > 0 %}
+            <li class="list-group-item dropdown-color">Songs Sang: {{ user.songs_sang }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Secret Stat]</li>
+          {% endif %}
+          <div class="dropdown-divider"></div>
+          {% if user.game_of_life_won > 0 %}
+            <li class="list-group-item dropdown-color">The Game of Life Wins: {{ user.game_of_life_won }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.scrabble_points > 0 %}
+            <li class="list-group-item dropdown-color">Max Scrabble Points: {{ user.scrabble_points }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.heave_ho_worlds > 0 %}
+            <li class="list-group-item dropdown-color">Heave Ho! Worlds cleared: {{ user.heave_ho_worlds }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.monopoly_won > 0 %}
+            <li class="list-group-item dropdown-color">Monopoly Games Won: {{ user.monopoly_won }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.max_dart_points > 0 %}
+            <li class="list-group-item dropdown-color">Max Dart Points: {{ user.max_dart_points }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.human_fall_flat_worlds > 0 %}
+            <li class="list-group-item dropdown-color">Human Fall Flat Worlds Cleared: {{ user.human_fall_flat_worlds }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.jenga_won > 0 %}
+            <li class="list-group-item dropdown-color">Jenga Matches Won: {{ user.jenga_won }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.stick_fight_won > 0 %}
+            <li class="list-group-item dropdown-color">Stick Fight Games Won: {{ user.stick_fight_won }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.operation_won > 0 %}
+            <li class="list-group-item dropdown-color">Operation Games Won: {{ user.operation_won }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.pikuniku_levels > 0 %}
+            <li class="list-group-item dropdown-color">Pikuniku Levels Cleared: {{ user.pikuniku_levels }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.battleship_won > 0 %}
+            <li class="list-group-item dropdown-color">Battleship Matches Won: {{ user.battleship_won }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.lovers_levels > 0 %}
+            <li class="list-group-item dropdown-color">Lovers in a Dangerous Spacetime Levels Cleared: {{ user.lovers_levels }}</li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.defused_bomb == 'True' %}
+            <li class="list-group-item dropdown-color">Bombs Defused in Keep Talking and Nobody Explodes? Yes </li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.chemistry_performed == 'True' %}
+            <li class="list-group-item dropdown-color">Chemistry Experiment Performed? Yes </li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+          {% if user.writing_assignments == 'True' %}
+            <li class="list-group-item dropdown-color">Baked a Recipe? Yes </li>
+          {% else %}
+            <li class="list-group-item dropdown-color">[Not Unlocked Yet]</li>
+          {% endif %}
+        </ul>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var medals = ['{{ user.grammar_skills }}','{{ user.listening_skills }}','{{ user.writing_skills }}','{{ user.vocabulary_skills }}','{{ user.oral_skills }}','{{ user.reading_skills }}']
+    var trophies = ['{{ user.songs_listened }}','{{ user.songs_sang }}','{{ user.stories_read }}','{{ user.books_finished }}','{{ user.words_learned }}','{{ user.irregular_verbs }}','{{ user.talking_time }}','{{ user.no_spanish_time }}', '{{ user.writing_assignments }}','{{ user.perfect_writing }}','{{ user.book_written }}']
+    var stickers = ['{{ user.monkey_island }}','{{ user.the_last_door }}','{{ user.to_the_moon }}','{{ user.oxenfree }}','{{ user.valiant_hearts }}','{{ user.walter_mitty}}','{{ user.big_fish }}','{{ user.warm_bodies }}','{{ user.the_help }}','{{ user.reign_over_me }}','{{ user.talked_to_native }}','{{ user.cinema_day }}','{{ user.escape_room }}','{{ user.every_event }}']
+    var phonemesLearned = {{ user.phonemes_learned }}
+  </script>
+  <script src='{% static 'js/merits.js' %}'type="text/javascript"></script>
+  {% if user.is_superuser %}
+    <a class="btn btn-primary custom-btn"  style="display: flex; justify-content: center; margin-top: 30px;" href="{% url 'accounts:account_list' %}"><span class="fas fa-address-card brand-rotate padding-dropdown-navbar"></span>List of Users</a>
+
+  {% endif %}
+  <a class="btn btn-primary custom-btn"  style="display: flex; justify-content: center; margin-top: 30px;" href="{% url 'homepage' %}"><span class="fas fa-address-card brand-rotate padding-dropdown-navbar"></span>Back to Index</a>
+</div>
+{% endblock %}
+
+<!--
+game_of_life_won = models.IntegerField(default=0)
+  scrabble_points = models.IntegerField(default=0)
+  heave_ho_worlds = models.IntegerField(default=0)
+  monopoly_won = models.IntegerField(default=0)
+  max_dart_points = models.IntegerField(default=0)
+  human_fall_flat_worlds = models.IntegerField(default=0)
+  jenga_won = models.IntegerField(default=0 )
+  stick_fight_won = models.IntegerField(default=0)
+  operation_won = models.IntegerField(default=0)
+  pikuniku_levels = models.IntegerField(default=0)
+  battleship_won = models.IntegerField(default=0 )
+  lovers_levels = models.IntegerField(default=0 )
+  defused_bomb = models.BooleanField(default=False)
+  chemistry_performed = models.BooleanField(default=False)
+  baked = models.BooleanField(default=False)
+ -->

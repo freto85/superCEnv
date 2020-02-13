@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
+    <meta charset="utf-8">
+    <title>Welcome to SuperC!</title>
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4dc7e526f3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Archivo+Black|Russo+One|Share+Tech|Squada+One|Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top russo-one-font navbar-base navbar-default" style="padding:0px !important; margin:0px !important;">
+      <a class="navbar-brand" href="/">
+        <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/girl-1615938-1372037.png"  width="80" height="80" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li id='nav-link-1' class="nav-item dropdown padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; border-left: 2px solid #b3b3ff;'>
+            <a  class="nav-link dropdown-toggle font-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-user brand-rotate padding-buttons-navbar"></span>
+              Account Management</a>
+            <div class="dropdown-menu dropdown-color-two dropdown-border animate slideIn" aria-labelledby="navbarDropdown" style="margin-left: 10px !important; margin-top: 30px !important; font-size: 0.9em !important; padding-top: 10px !important;">
+              <a class="dropdown-item dropdown-color" href="{% url 'accounts:account_info' %}"><span class="fas fa-address-card brand-rotate padding-dropdown-navbar"></span>My Account</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'accounts:messages_list' %}"><span class="fas fa-comments brand-rotate padding-dropdown-navbar"></span>Messages</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'accounts:logout' %}"><span class="fas fa-sign-out-alt brand-rotate padding-dropdown-navbar" ></span>Log Out</a>
+            </div>
+          </li>
+          <li id='nav-link-2' class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; border-left: 2px solid #b3b3ff;text-align:center; width:220px;'>
+            <a class="nav-link font-color" href="{% url 'news:news_list' %}"><span  class="fas fa-newspaper brand-rotate padding-buttons-navbar"></span>Blog & News</a>
+          </li>
+          <li id='nav-link-3' class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; width: 180px !important; text-align:center;border-left: 2px solid #b3b3ff; width:220px;'>
+            <a class="nav-link font-color" href="{% url 'badges:badges' %}"><span style='text-align:center;' class="fas fa-award brand-rotate padding-buttons-navbar"></span>Merits</a>
+          </li>
+          <li id='nav-link-4' class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; width: 180px !important; text-align:center;border-left: 2px solid #b3b3ff; width:220px;'>
+            <a class="nav-link font-color" href="{% url 'rewards:rewards' %}"><span style='text-align:center;' class="far fa-map brand-rotate padding-buttons-navbar"></span>Roadmap</a>
+          </li>
+          <li id='nav-link-5' class="nav-item dropdown padding-buttons-navbar" style='padding: 0px !important; margin: 0px !important; width: 180px; text-align:center;  border-left: 2px solid #b3b3ff; width:220px;'>
+            <a class="nav-link dropdown-toggle font-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id='box-change' style='text-align:center;' class="fas fa-box brand-rotate padding-buttons-navbar"></span>
+              Resources
+            </a>
+            <div id='menu-change' class="dropdown-menu dropdown-color-two dropdown-border animate slideIn" aria-labelledby="navbarDropdown" style="margin-left: 60px !important; margin-top: 30px !important; font-size: 0.9em !important;">
+              <a  class="dropdown-item dropdown-color" href="{% url 'resources:glossary' %}"><span class="fas fa-paperclip brand-rotate padding-dropdown-navbar"></span>Glossary</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'resources:activities' %}"><span class="fas fa-book-reader brand-rotate padding-dropdown-navbar"></span>Homework</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'resources:downloads'%}"><span class="fa fas fa-book brand-rotate padding-dropdown-navbar"></span>Library</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'resources:games'%}"><span class="fas fa-gamepad brand-rotate padding-dropdown-navbar"></span>Games</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'resources:media'%}"><span class="fas fa-photo-video brand-rotate padding-dropdown-navbar"></span>Media</a>
+            </div>
+          </li>
+          <li id='nav-link-6' class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: 0px !important; width: 200px; text-align:center; border-left: 2px solid #b3b3ff; border-right: 2px solid #b3b3ff; width:220px;'>
+            <a class="nav-link font-color" href="{% url 'special:special' %}"><span style='text-align:center;' class="fas fa-star brand-rotate padding-buttons-navbar"></span>Special Events</a>
+          {% if user.is_superuser %}
+          <li class="nav-item padding-buttons-navbar">
+            <a class="nav-link font-color2" href="{% url 'station:station_home' %}"><span class="fas fa-star brand-rotate padding-buttons-navbar"></span>Account: {{ user.username }}</a>
+          </li>
+          {% else %}
+          <li class="nav-item padding-buttons-navbar">
+            <a class="nav-link" href="#"><span class="fas fa-star brand-rotate padding-buttons-navbar"></span>Account: {{ user.username }}</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+    {% else %}
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top russo-one-font navbar-base navbar-default" style="padding:0px !important; margin:0px !important;">
+      <a class="navbar-brand" href="/">
+        <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/girl-1615938-1372037.png"  width="80" height="80" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li id='nav-link-1' class="nav-item dropdown padding-buttons-navbar">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-user brand-rotate padding-buttons-navbar"></span>
+              Account Management</a>
+            <div class="dropdown-menu dropdown-color-two dropdown-border animate slideIn" aria-labelledby="navbarDropdown" style="margin-left: 60px !important; margin-top: 30px !important; font-size: 0.9em !important;">
+
+              <a class="dropdown-item dropdown-color" href="{% url 'accounts:login' %}"><span class="fas fa-sign-in-alt brand-rotate padding-dropdown-navbar"></span>Log In</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'accounts:signup' %}"><span class="fas fa-user-plus brand-rotate padding-dropdown-navbar"></span>Sign Up</a>
+          </li>
+          <li class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; border-left: 5px solid #440378;text-align:center; width:220px;'>
+            <a class="nav-link disabled" href="{% url 'news:news_list' %}"><span class="fas fa-newspaper brand-rotate padding-buttons-navbar"></span>Blog & News</a>
+          </li>
+          <li class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; width: 180px !important; text-align:center;border-left: 5px solid #440378; width:220px;'>
+            <a class="nav-link disabled" href="{% url 'badges:badges' %}"><span class="fas fa-award brand-rotate padding-buttons-navbar"></span>Merits</a>
+          </li>
+          <li class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; width: 180px !important; text-align:center; border-left: 5px solid #440378; width:220px;'>
+            <a class="nav-link disabled" href="{% url 'rewards:rewards' %}"><span class="far fa-map brand-rotate padding-buttons-navbar"></span>Roadmap</a>
+          </li>
+          <li id='button-change' class="nav-item dropdown padding-buttons-navbar" style='padding: 0px !important; margin: 0px !important; width: 180px; text-align:center; border-left: 5px solid #440378; width:220px;'>
+            <a  class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id='box-change' class="fas fa-box brand-rotate padding-buttons-navbar"></span>
+              Resources
+            </a>
+            <div id='menu-change' class="dropdown-menu dropdown-color-two dropdown-border animate slideIn" aria-labelledby="navbarDropdown" style="margin-left: 60px !important; margin-top: 30px !important; font-size: 0.9em !important;">
+              <a class="dropdown-item dropdown-color" href="{% url 'resources:glossary' %}"><span class="fas fa-paperclip brand-rotate padding-dropdown-navbar"></span>Glossary</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'resources:activities' %}"><span class="fas fa-book-reader brand-rotate padding-dropdown-navbar"></span>Homework</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'resources:downloads'%}"><span class="fas fa-book brand-rotate padding-dropdown-navbar"></span>Library</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'resources:games'%}"><span class="fas fa-gamepad brand-rotate padding-dropdown-navbar"></span>Games</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-color" href="{% url 'resources:media'%}"><span class="fas fa-photo-video brand-rotate padding-dropdown-navbar"></span>Media</a>
+            </div>
+          </li>
+          <li class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: 0px !important; width: 200px; text-align:center;border-left: 5px solid #440378;border-right: 5px solid #440378; width:220px;'>
+            <a class="nav-link disabled" href="{% url 'special:special' %}"><span class="fas fa-star brand-rotate padding-buttons-navbar"></span>Special Events</a>
+          </li>
+          <li class="nav-item padding-buttons-navbar">
+            <a class="nav-link" href="#"><span class="fas fa-star brand-rotate padding-buttons-navbar"></span>Username: Guest</a></li>
+        </ul>
+      </div>
+    </nav>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark firstfont navbar-default" style='border-top: 2px solid #b3b3ff !important'>
+    <script>
+    $('#menu-change').hover(function(){
+      $('#box-change').toggleClass('fa-box-open');
+    })
+    $('#nav-link-1').hover(function(){
+      $('#nav-link-1').toggleClass('nav-buttons-change')
+    })
+    $('#nav-link-2').hover(function(){
+      $('#nav-link-2').toggleClass('nav-buttons-change')
+    })
+    $('#nav-link-3').hover(function(){
+      $('#nav-link-3').toggleClass('nav-buttons-change')
+    })
+    $('#nav-link-4').hover(function(){
+      $('#nav-link-4').toggleClass('nav-buttons-change')
+    })
+    $('#nav-link-5').hover(function(){
+      $('#nav-link-5').toggleClass('nav-buttons-change')
+    })
+    $('#nav-link-6').hover(function(){
+      $('#nav-link-6').toggleClass('nav-buttons-change')
+    })
+    /* .toggleClass(nav-buttons-change)  */
+    </script>
+    <script src="{% static 'js/master.js' %}"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.0.0-rc.3"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

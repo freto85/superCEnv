@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+    <div class="container">
+      <h1 class="display-4 contentfont share-tech-font">Welcome to SuperC!</h1>
+      <div class="dropdown-divider"></div>
+      <div class="container" style="display: flex; justify-content: center;">
+          <img class="col-" style="" src="static/images/built.jpg"></img>
+      </div>
+      <div class="dropdown-divider"></div>
+    </div>
+  {% if user.is_authenticated %}
+  <p class="lead" style="color:#dfcde5; font-size: 2em; display: flex; justify-content: center;">You are logged in! To navigate the site, use the menu above!</p>
+  {% else %}
+  <p class="lead" style="color:#dfcde5; font-size: 2em; display: flex; justify-content: center;">You should Log In or Sign Up!</p>
+  <a class="btn btn-primary btn-lg custom-btn" href="{% url 'accounts:login' %}" role='button' style="display: flex; justify-content: center;">Log In</a>
+  <a class="btn btn-primary btn-lg custom-btn" href="{% url 'accounts:signup' %}" role='button' style="display: flex; justify-content: center;">Sign Up</a>
+  {% endif %}
+
+  </div>
+</div>
+{% endblock %}

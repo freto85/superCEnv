@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
+    <div class="container">
+      <h1 class='contentfont'>Accounts</h1>
+    </div>
+    <div class="dropdown-divider"></div>
+    {% for account in object_list %}
+      <div class="container">
+            <h1 class='contentfont dropdown-color'><a href="{% url 'accounts:detail_account' pk=account.pk %}" style='color: inherit;'>User: {{ account.username }}</a></h1>
+      </div>
+      {% if user.is_superuser %}
+      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_personal' pk=account.pk %}">Edit Personal Info<span class="fas fa-user-circle" style='padding-left:10px;'></span></a>
+      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_medals' pk=account.pk %}">Edit Medals<span class="fas fa-medal" style='padding-left:10px;'></span></a>
+      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_trophies' pk=account.pk %}">Edit Trophies<span class="fas fa-trophy" style='padding-left:10px;'></span></a>
+      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_stickers' pk=account.pk %}">Edit Stickers<span class="fas fa-certificate" style='padding-left:10px;'></span></a>
+      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_roadmap' pk=account.pk %}">Edit Roadmap<span class="far fa-map" style='padding-left:10px;'></span></a>
+      {% endif %}
+
+      <div class="dropdown-divider"></div>
+    {% endfor %}
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
+    <form class="post-form" method="POST">
+      <div class="container">
+        {% csrf_token %}
+        {{ form_user }}
+        <br>
+        {{ form_message }}
+      </div>
+      <button type="submit" class='save btn btn-primary custom-btn btn-lg'>New Message</button>
+    </form>
+  </div>
+  <a class="btn btn-primary btn-lg custom-btn" href="{% url 'accounts:messages_list' %}" role='button' style="display: flex; justify-content: center; margin-top: 30px !important;">Back to List of Users</a>
+</div>
+<script>var editor = new MediumEditor('.editable');</script>
+{% endblock %}

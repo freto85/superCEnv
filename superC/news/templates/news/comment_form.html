@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
+    <h1 class='contentfont'>New Comment</h1>
+    <div class="container firstfont dropdown-color" style='padding:10px;border:10px;'>
+      <form class="post-form" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class= 'save btn btn-primary btn-block custom-btn'>Postear Comentario</button>
+      </form>
+      <script>var editor = new MediumEditor('.editable');</script>
+    </div>
+  </div>
+</div>
+{% endblock %}
