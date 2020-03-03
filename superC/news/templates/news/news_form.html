@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
-  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
-    <h1 class='contentfont'>New Post</h1>
+<div class="container" style='margin-top: 40px;'>
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 0px; padding:0px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+    <h1 class="title-merits archivo-black-font">New Post</h1>
     <div class="container firstfont dropdown-color" style='padding:20px;'>
       <form class="post-form" method="POST">
         <div class="container">
           {% csrf_token %}
           {{form.as_p}}
         </div>
-        <button type="submit" class='save btn btn-primary custom-btn btn-lg'>Create News</button>
+        <button type="submit" class='save btn btn-primary custom-btn btn-lg share-tech-font'><span class='fas fa-pencil-alt' style='margin-right:10px;'></span>Create News</button>
+        <a style='button' class='btn btn-primary custom-btn btn-lg share-tech-font' href="{% url 'news:news_list' %}" role='button'><span class='fas fa-ban' style='margin-right:10px;'></span>Cancel</a>
       </form>
     </div>
   </div>

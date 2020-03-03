@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container" style='margin-top: 40px;'>
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 0px; padding:0px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+  <h1 class="title-merits archivo-black-font" style='border: 1px solid #b3b3ff;'>Homework Section</h1>
+    <div class="container">
+      <div class="container" style="display: flex; justify-content: center;">
+          <img class="col-" style="border: 2px solid #b3b3ff; padding: 0px;margin-top:10px;" src="{% static "images/built.png" %}"></img>
+      </div>
+      <div class="dropdown-divider"></div>
+      <p class="lead" style="color:#dfcde5; font-size: 2em; display: flex; justify-content: center;">This site is currently under development! Come back later!</p>
+    </div>
+    <div class="text-center">
+        <a type="button" class="btn btn-primary custom-btn russo-one-font" style='margin-bottom: 10px;' href="{% url 'homepage' %}"><span class='fas fa-home' style='margin-right:10px;'></span>Back to Index</a>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

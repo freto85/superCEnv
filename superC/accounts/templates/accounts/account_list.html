@@ -2,27 +2,28 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
-    <div class="container">
-      <h1 class='contentfont'>Accounts</h1>
-    </div>
+<div class="container account-list-background" style='margin-top: 40px; padding-bottom: 10px; margin-bottom:10px;'>
+  <div class="jumbotron jumbotron-fluid account-list-background">
+    <h1 class="title-merits archivo-black-font">Accounts</h1>
     <div class="dropdown-divider"></div>
     {% for account in object_list %}
       <div class="container">
-            <h1 class='contentfont dropdown-color'><a href="{% url 'accounts:detail_account' pk=account.pk %}" style='color: inherit;'>User: {{ account.username }}</a></h1>
+        <a class='btn btn-primary btn-block account-list-title yanone-font' href="{% url 'accounts:detail_account' pk=account.pk %}" ><span style='border: 2px solid #E69A8DFF;border-radius: 10%; padding: 5px 5px 2px 5px'><strong>User:</strong></span> <span class='odibee' style='margin-left:10px;color:#b3b3ff;'>{{ account.username }}</span></a>
       </div>
       {% if user.is_superuser %}
-      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_personal' pk=account.pk %}">Edit Personal Info<span class="fas fa-user-circle" style='padding-left:10px;'></span></a>
-      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_medals' pk=account.pk %}">Edit Medals<span class="fas fa-medal" style='padding-left:10px;'></span></a>
-      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_trophies' pk=account.pk %}">Edit Trophies<span class="fas fa-trophy" style='padding-left:10px;'></span></a>
-      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_stickers' pk=account.pk %}">Edit Stickers<span class="fas fa-certificate" style='padding-left:10px;'></span></a>
-      <a class="btn btn-primary custom-btn btn-lg" href="{% url 'accounts:update_roadmap' pk=account.pk %}">Edit Roadmap<span class="far fa-map" style='padding-left:10px;'></span></a>
-      {% endif %}
+      <div class="container">
+        <a class="btn btn-primary custom-btn btn-lg odibee" href="{% url 'accounts:update_personal' pk=account.pk %}">Edit Personal Info<span class="fas fa-user-circle" style='padding-left:10px;'></span></a>
+        <a class="btn btn-primary custom-btn btn-lg odibee" href="{% url 'accounts:update_medals' pk=account.pk %}">Edit Medals<span class="fas fa-medal" style='padding-left:10px;'></span></a>
+        <a class="btn btn-primary custom-btn btn-lg odibee" href="{% url 'accounts:update_trophies' pk=account.pk %}">Edit Trophies<span class="fas fa-trophy" style='padding-left:10px;'></span></a>
+        <a class="btn btn-primary custom-btn btn-lg odibee" href="{% url 'accounts:update_stickers' pk=account.pk %}">Edit Stickers<span class="fas fa-certificate" style='padding-left:10px;'></span></a>
+        <a class="btn btn-primary custom-btn btn-lg odibee" href="{% url 'accounts:update_roadmap' pk=account.pk %}">Edit Roadmap<span class="far fa-map" style='padding-left:10px;'></span></a>
+      </div>
 
+      {% endif %}
+      <div class="dropdown-divider"></div>
       <div class="dropdown-divider"></div>
     {% endfor %}
-
+    <a class="btn btn-primary custom-btn btn-lg btn-block yanone-font"  style="display: flex; justify-content: center; margin-top: 15px;margin-bottom: 15px !improtant;" href="{% url 'homepage' %}"><span class="fas fa-home brand-rotate padding-dropdown-navbar"></span>Homepage</a>
   </div>
 </div>
 {% endblock %}

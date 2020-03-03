@@ -1,31 +1,33 @@
-.title-merits {
-  font-family: 'Squada One', cursive;
-  color: #dfcde5 !important;
-  /** background: rgb(81,42,92);
-  background: linear-gradient(90deg, rgba(81,42,92,1) 10%, rgba(0,0,0,1) 42%, rgba(40,34,83,1) 54%, rgba(6,41,102,1) 66%, rgba(111,3,116,1) 100%); **/
-  background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,1) 5%, rgba(54,54,98,1) 54%, rgba(0,0,0,1) 100%);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-top: 0px;
-  font-size:5em !important;
-  text-align: center;
+/* |||||||||||||||||||||||||  */
+/* ||||||  HTML BASE  ||||||  */
+/* |||||||||||||||||||||||||  */
+
+body {
+		text-align: center;
+		background: #210b32  !important;
+    height: 100% !important;
+    margin: 0 !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
-#media-pictures {
+html {
 
-};
-
-#media-videos {
-
-};
-
-#media-audio {
-  ;
 }
 
+/*  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/*  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+
+
+/* |||||||||||||||||||||  */
 /* ||||||  FONTS  ||||||  */
+/* |||||||||||||||||||||  */
 
+.text-muted {
+  color: #dfcde5 !important!
+}
 .squada-font {
   font-family: 'Squada One', cursive;
 }
@@ -36,21 +38,6 @@
 
 .share-tech-font {
   font-family: 'Share Tech', sans-serif;
-}
-
-.russo-one-font.navbar-base {
-  font-size:1.1em !important;
-  text-shadow: -1px 0 black, 0 2px #45284d, 2px 0 #45284d, 0 -1px #45284d;
-  border-bottom: 2px solid #b3b3ff !important; margin-top:0px !important; position:fixed;
-
-}
-
-.font-color {
-  color: #E69A8DFF !important;
-}
-
-.font-color2 {
-  color: #b3b3ff !important;
 }
 
 .russo-one-font {
@@ -65,193 +52,82 @@
   font-family: 'Archivo Black', sans-serif;
 }
 
-.jumbo-background-one {
-  margin-top: 40px;
-  background: rgb(0,0,0);
-  background: linear-gradient(135deg, rgba(0,0,0,1) 5%, rgba(112,37,171,1) 23%, rgba(40,14,74,1) 46%, rgba(160,113,205,1) 98%);
-  border: 4px solid #BFADD8;
-}
-
-#medal {
-  background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,1) 5%, rgba(54,54,98,1) 54%, rgba(0,0,0,1) 100%);
-}
-
-.tabs-merit-background{
-  background: rgb(62,14,75);
-  background: linear-gradient(90deg, rgba(62,14,75,1) 5%, rgba(74,74,128,1) 54%, rgba(43,12,57,1) 100%);
-
-
-}
-.merits-font-username{
-  /* font-family: 'Squada One', cursive; */
-  /* font-size:2.5em !important; */
-  color: #dfcde5 !important;
-  background-color: #341a3b;
-  text-align: center;
-  margin-top: 0px;
-  border-bottom: 0px !important;
-}
-
-.tabs-merits-font {
-  /* font-family: 'Squada One', cursive; */
-  color: #dfcde5 !important;
-  border-bottom: 2px solid #45284d;
-  text-shadow: -1px 0 #45284d, 0 2px #45284d, 2px 0 #45284d, 0 -1px #45284d;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-top: 0px;
-  font-size:3.5em !important;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  position: float;
-}
-
-
-.navbar .nav, .navbar .nav > li {
- float:none;
- display:inline-block;
- *display:inline; /* ie7 fix */
- *zoom:1; /* hasLayout ie7 trigger */
- vertical-align: top;
-}
-
-.btn-primary.custom-btn {
-  background-color: #51098D !important;
-  color: #E69A8DFF ;
-  border-color: #b3b3ff !important;
-}
-
-
 .font-form-two {
   font-family: 'Yanone Kaffeesatz', sans-serif !important;
   font-size: 3em !important;
   color: #dfcde5 !important;
 }
 
-.font-form {
-  font-family: 'Yanone Kaffeesatz', sans-serif !important;
-  font-size: 1.5em;
-  color: #dfcde5 !important;
+.odibee {
+
+font-family: 'Odibee Sans', cursive;
+
 }
 
-.text-muted {
-  color: #dfcde5 !important!
+/* |||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||        NAVBAR                    ||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||| */
+
+.navbar .nav, .navbar .nav > li {
+ *zoom:1; /* hasLayout ie7 trigger */
+ vertical-align: top;
+ width:100% !important;
+ display: inline-flex;
+ align-items: justify;
 }
 
-.centerstage{
-  margin-top: auto !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+.nav-width {
+		width: 100%;
+		width: 160px;
+		text-align: left;
 }
 
-.contentfont {
-  color: #b3b3ff !important;
-  font-size:3.5em !important;
-  text-align: center;
-  border-top: 30px;
-  text-shadow: -1px 0 #45284d, 0 3px #45284d, 4px 0 #45284d, 0 -1px #45284d;
+.sandwich {
+	margin-right: 20px;
 }
 
-.badges-font-title {
-  background: linear-gradient(90deg, rgba(215,60,249,0.6615021008403361) 0%, rgba(126,126,218,1) 35%, rgba(79,22,105,1) 84%);
-  font-family: 'Squada One', cursive;
-  color: #dfcde5 !important;
-  font-size:3em !important;
-  text-align: center;
-  border-top: 30px;
+.nav-shape {
+	border:2px solid #E69A8DFF;
+	margin-right: 2px;
+	text-align:center;
+	display: inline-flex;
+	align-items: center;
+	vertical-align: middle;
+	height: 70px;
+	border-radius: 3%;
+	background-color: #51068D !important;
+
+}
+
+.nav-link {
+	font-size:1.20em;
+}
+
+.nav-link.tab-info {
+	font: size:1.20em;
+	color: #b3b3ff !important;
 }
 
 .nav-buttons-change {
-  background: #681AA8 !important;
+  background-color: #6658B6 !important;
+	color: white !important;
 }
 
 .navbar-default {
-  background: #51098D !important;
-  /* background: rgb(63,28,110);
-  background: linear-gradient(90deg, rgba(63,28,110,1) 5%, rgba(0,0,0,1) 100%); */
+  background: #3B0368;
+	border-bottom: 2px solid #E69A8DFF;
+
 }
 
-html {
-  height: 100% !important;
+.navbar-dropdown-menu {
+	background-color: #5B069F !important;
+	border: 1px solid #E69A8DFF !important;
 }
 
-body {
-  height: 100% !important;
-  margin: 0 !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  background: #2f3951 !important;
-  /* background: #51098D !important;  /* fallback for old browsers
-  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29) !important;  /* Chrome 10-25, Safari 5.1-6 *
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.dropdown-color {
-  background-color: #681AA8 !important;
-  color: white !important;
-  text-align: center !important;
-}
-
-.dropdown-color-two {
-  background-color: #681AA8 !important;
-  color: white !important;
-  text-align: center !important;
-  border: 3px solid #681AA8 !important;
-}
-.fa {
-  font-family: 'FontAwesome' !important;
-}
-
-
-@media (min-width: 992px) {
-  .animate {
-    animation-duration: 0.3s;
-    -webkit-animation-duration: 0.3s;
-    animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
-  100% {
-    transform:translateY(0rem);
-    opacity: 1;
-  }
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes slideIn {
-  0% {
-    -webkit-transform: transform;
-    -webkit-opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    -webkit-opacity: 1;
-  }
-  0% {
-    -webkit-transform: translateY(1rem);
-    -webkit-opacity: 0;
-  }
-}
-
-.slideIn {
-  -webkit-animation-name: slideIn;
-  animation-name: slideIn;
-}
-
-.padding-buttons-navbar {
-  padding: 0px 5px 0px 5px !important;
-  margin: 0px 10px 0px 10px !important;
+.navbar-dropdown {
+	color: #b3b3ff !important;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 .padding-buttons-navbar-two {
@@ -259,91 +135,179 @@ body {
   margin: 0px 20px 0 20px !important;
 }
 
-
-
 .padding-dropdown-navbar {
   padding: 0px 10px 0px 10px !important;
   float:left !important;
 }
 
-
-.brand-rotate:hover {
-  -webkit-animation: rotation 3s infinite linear;
+.russo-one-font.navbar-base {
+  font-size:1.1em !important;
+  text-shadow: -1px 0 black, 0 2px #45284d, 2px 0 #45284d, 0 -1px #45284d;
+  border-bottom: 2px solid #b3b3ff !important; margin-top:0px !important; position:fixed;
 }
 
-body {
+/* |||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||         JUMBOTRON                ||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||| */
+
+.jumbotron {
+	background-color: #5b4e9d;
+	margin-top: 0px !important;
+	padding:0px !important;
+}
+
+.jumbotron.account-tabs {
+	background-color: #4d5bd4 !important;
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||
+   |||||||       MEDIA               |||||||||||||
+	 |||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+.title-media {
+	   color: #d3d2d2 !important;
+		 background: rgb(0,0,0);
+		 background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(26,53,93,1) 19%, rgba(0,0,0,1) 60%, rgba(36,30,82,1) 76%, rgba(0,0,0,1) 100%);
+	   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	   padding: 15px 0px 15px 0px;
+	   margin: 0px 0px 0px 0px;
+	   font-size:4em !important;
+	   text-align: center;
+		 border: 1px solid #4a4a4a;
+}
+
+.media-pictures-title {
+		background-color: #a11313 !important;
+	  color: #E69A8DFF;
+	  text-align: center;
+	  padding:10px 0px 5px 0px !important;
+}
+
+.media-home-title {
+		background-color: #51068D !important;
+	  color: #bee3e8;
+	  text-align: center;
+	  padding:10px 0px 5px 0px !important;
+		margin-bottom: 40px;
+}
+
+.media-video-title {
+		background-color: #2d4c4e !important;
+	  color: #bee3e8;
+	  text-align: center;
+	  padding:10px 0px 5px 0px !important;
+		margin-bottom: 40px;
+}
+
+.media-video-background {
+	background-color: #4F8B8E !important;
+	border: 3px solid #2d4c4e;
+	border-radius: 5%;
+	padding-bottom: 8px;
+}
+
+.med-sm-btn-video {
+	font-size: 1.3em !important;
+	background-color: #2d4c4e !important;
+	color: #bee3e8 !important;
+	border-color: #4F8B8E !important;
+	justify-content: center;
+	border-radius: 10%;
+}
+
+
+.media-audio-title {
+		background-color: #969221 !important;
+		color: #c7c491;
 		text-align: center;
-		padding: 100px 0 0 0;
-		color: #fff;
-		background: #1d1f20;
+		padding:10px 0px 5px 0px !important;
 }
 
-@-webkit-keyframes rotation {
-		from {
-				-webkit-transform: rotateY(0deg);
-		}
-		to {
-				-webkit-transform: rotateY(359deg);
-		}
+.med-btn {
+	font-size: 2em !important;
+ 	background-color: #9a0000 !important;
+	color: #E69A8DFF !important;
+	border-color: #b3b3ff !important;
+	display: flex !important;
+	justify-content: center;
+	margin-top: 30px;
 }
 
-.loading:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+.media-audio-background {
+	background-color: #c7c491;
 }
 
-.badgesbox {
-  margin-left: 10px;
-  background-color: #8B5FBF;
+.audio-track-background {
+	background-color: #a09d66;
+	border: 3px solid #525130;
+	border-radius: 5%;
 }
 
-.badgeborder {
-  display: block;
-  border: 5px solid #643A71;
-  background: rgb(33,33,34);
-  background: radial-gradient(circle, rgba(33,33,34,1) 0%, rgba(145,30,141,1) 100%);
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
+.med-btn-audio {
+	font-size: 1.4em !important;
+	background-color: #969221 !important;
+	color: #525130 !important;
+	border-color: #525130 !important;
+	display: flex !important;
+	justify-content: center;
+	margin-top: 30px;
+	border-radius: 5%;
 }
 
-.badges-paragraph {
-  display: flex;
-  justify-content: center;
-  background-color: #643a71;
-  color: #dfcde5 !important;
-  border: 1px solid #45284d;
-  margin-top: 5px;'
+.med-sm-btn-audio {
+	font-size: 1.3em !important;
+	background-color: #bee3e8 !important;
+	color: #525130 !important;
+	border-color: #525130 !important;
+	justify-content: center;
+	border-radius: 10%;
 }
 
-.triangle-up {
-  position: relative;
-	width: 0;
-	height: 0;
-	border-left: 25px solid transparent;
-	border-right: 25px solid transparent;
-	border-bottom: 50px solid #555;
+
+
+.med-btn-videos {
+	font-size: 2em !important;
+	background-color: #3a6264 !important;
+	color: #bee3e8 !important;
+	border-color: #525130 !important;
+	display: flex !important;
+	justify-content: center;
 }
 
-  .well-test {
-    margin-left: 50px;
-    margin-bottom: 50px;
-    display:block;
-    position: relative;
-    border: 8px solid #643a71;
-    height: 760px;
-    width: 1600px;
-    margin-top: 40px;
-    background-image: url('../images/Unlocks/roadmap2.png');
-    background-repeat: no-repeat;
+.media-tab-1.active {
+	background-color: #51068D !important;
+}
 
-  }
+.media-tab-2.active {
+	background-color: #9a0000 !important;
+}
 
-.unlock-icon {
-  position: relative !important;
-  height: 128px !important;
-  width: 128px !important;
-  background-color: white !important;
-  border-radius: 50%;
+.media-tab-3.active {
+	background-color: #2d4c4e !important;
+}
+
+.media-tab-4.active {
+	background-color: #969221 !important;
+}
+
+.image-create-form {
+	border: 1px solid white;
+  background-color: #681AA8 !important;
+  color: white !important;
+}
+
+
+/* ||||||||||||||||||||||||||||||||||||||||||||
+   ||||||| ROADMAP                |||||||||||||
+	 |||||||||||||||||||||||||||||||||||||||||||| */
+
+
+
+
+#medal {
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 5%, rgba(54,54,98,1) 54%, rgba(0,0,0,1) 100%);
 }
 
 #game-of-life {
@@ -352,7 +316,6 @@ body {
   position: absolute !important;
   margin-left: 59px !important;
   margin-top: 85px;
-
 }
 
 #locked-one {
@@ -361,7 +324,6 @@ body {
   position: absolute !important;
   margin-left: 59px !important;
   margin-top: 85px;
-
 }
 
 #scrabble {
@@ -370,7 +332,6 @@ body {
   position: absolute !important;
   margin-left: 59px !important;
   margin-top: 280px;
-
 }
 
 #movie-1 {
@@ -387,7 +348,6 @@ body {
   position: absolute !important;
   margin-left: 59px !important;
   margin-top: 590px;
-
 }
 
 #heave-ho {
@@ -396,7 +356,6 @@ body {
   position: absolute !important;
   margin-left: 290px !important;
   margin-top: 40px;
-
 }
 
 #locked-three {
@@ -405,10 +364,7 @@ body {
   position: absolute !important;
   margin-left: 290px !important;
   margin-top: 40px;
-
 }
-
-
 
 #monopoly {
   background-image: url('../images/Unlocks/monopoly.png') !important;
@@ -416,7 +372,6 @@ body {
   position: absolute !important;
   margin-left: 290px !important;
   margin-top: 210px !important;
-
 }
 
 #locked-four {
@@ -425,9 +380,7 @@ body {
   position: absolute !important;
   margin-left: 290px !important;
   margin-top: 210px !important;
-
 }
-
 
 #dart-board {
   background-image: url('../images/Unlocks/Dartboard.jpg') !important;
@@ -467,7 +420,6 @@ body {
   position: absolute !important;
   margin-left: 512px !important;
   margin-top: 40px;
-
 }
 
 #locked-seven {
@@ -484,7 +436,6 @@ body {
   position: absolute !important;
   margin-left: 512px !important;
   margin-top: 385px;
-
 }
 
 #locked-eight {
@@ -493,7 +444,6 @@ body {
   position: absolute !important;
   margin-left: 512px !important;
   margin-top: 385px;
-
 }
 
 
@@ -535,7 +485,6 @@ body {
   position: absolute !important;
   margin-left: 748px !important;
   margin-top: 131px;
-
 }
 
 #locked-eleven {
@@ -585,7 +534,6 @@ body {
   position: absolute !important;
   margin-left: 961px !important;
   margin-top: 40px;
-
 }
 
 #locked-fourteen {
@@ -596,15 +544,12 @@ body {
   margin-top: 40px;
 }
 
-
-
 #battleship {
   background-image: url('../images/Unlocks/battleship.png') !important;
   background-position: auto;
   position: absolute !important;
   margin-left: 961px !important;
   margin-top: 440px;
-
 }
 
 #locked-fifteen {
@@ -621,7 +566,6 @@ body {
   position: absolute !important;
   margin-left: 961px !important;
   margin-top: 239px;
-
 }
 
 #locked-sixteen {
@@ -696,7 +640,6 @@ body {
   margin-top: 239px;
 }
 
-
 #baking-time {
   background-image: url('../images/Unlocks/cooking.png') !important;
   background-position: auto;
@@ -734,4 +677,361 @@ body {
   margin-top: 20px;
   font-family: 'Archivo Black', sans-serif;
   text-shadow: -1px 0 #4A97D7, 0 1px#4A97D7, 1px 0 #4A97D7, 0 -1px #4A97D7;
+}
+
+.btn-primary.custom-btn {
+  background-color: #51098D !important;
+  color: #E69A8DFF ;
+  border-color: #b3b3ff !important;
+}
+
+.btn-primary.custom-btn:hover {
+  background-color: #902AE5 !important;
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||         JUMBOTRON                ||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||| */
+
+.jumbo-background-one {
+  margin-top: 40px;
+  background: rgb(0,0,0);
+  background: linear-gradient(135deg, rgba(0,0,0,1) 5%, rgba(112,37,171,1) 23%, rgba(40,14,74,1) 46%, rgba(160,113,205,1) 98%);
+  border: 4px solid #BFADD8;
+}
+
+.centerstage{
+  margin-top: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.dropdown-color {
+  background-color: #681AA8 !important;
+  color: white !important;
+  text-align: center !important;
+}
+
+.dropdown-color-two {
+  background-color: #681AA8 !important;
+  color: white !important;
+  text-align: center !important;
+  border: 3px solid #681AA8 !important;
+}
+
+.fa {
+  font-family: 'FontAwesome' !important;
+}
+
+@media (min-width: 992px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform:translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
+
+.brand-rotate:hover {
+  -webkit-animation: rotation 3s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotateY(0deg);
+		}
+		to {
+				-webkit-transform: rotateY(359deg);
+		}
+}
+
+.loading:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+}
+
+.triangle-up {
+  position: relative;
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid #555;
+}
+
+.well-test {
+  margin-left: 50px;
+  margin-bottom: 50px;
+  display:block;
+  position: relative;
+  border: 8px solid #643a71;
+  height: 760px;
+  width: 1600px;
+  margin-top: 40px;
+  background-image: url('../images/Unlocks/roadmap2.png');
+  background-repeat: no-repeat;
+}
+
+.unlock-icon {
+  position: relative !important;
+  height: 128px !important;
+  width: 128px !important;
+  background-color: white !important;
+  border-radius: 50%;
+}
+
+/* ||||||||||||||||||||||||||||||||||||||||||||||
+ ||||||||||| MERITS      ||||||||||||||||||||||
+ ||||||||||||||||||||||||||||||||||||||||||||||| */
+
+.badge-home-title {
+	background: rgb(86,34,120);
+	background: linear-gradient(94deg, rgba(86,34,120,1) 1%, rgba(101,37,162,1) 34%, rgba(120,45,201,1) 48%, rgba(88,36,154,1) 62%, rgba(104,41,163,1) 100%);
+	text-align: center;
+	color: #D39FFF;
+	padding:10px 0px 5px 0px !important;
+}
+
+ .medals-title {
+ 	background: rgb(47,87,193);
+ 	background: radial-gradient(circle, rgba(47,87,193,1) 0%, rgba(12,91,204,1) 19%, rgba(35,47,176,1) 50%, rgba(60,46,166,1) 76%, rgba(60,60,143,1) 100%);
+ 	color: #b3b3ff;
+ 	text-align: center;
+ 	padding:10px 0px 5px 0px !important;
+ }
+
+ .trophies-title {
+
+	 background: #800b12;
+	 color: #fa8ca3;
+	 text-align: center;
+	 padding:10px 0px 5px 0px !important;
+ }
+
+ .stickers-title {
+	 background-color: #245b23;
+	 color: #7bed9a;
+	 text-align: center;
+	 padding:10px 0px 5px 0px !important;
+ }
+
+ .title-merits {
+   color: #d3d2d2 !important;
+	 background: rgb(0,0,0);
+	 background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(26,53,93,1) 19%, rgba(0,0,0,1) 60%, rgba(36,30,82,1) 76%, rgba(0,0,0,1) 100%);
+   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+   padding: 15px 0px 15px 0px;
+   margin: 0px 0px 0px 0px;
+   font-size:4em !important;
+   text-align: center;
+	 border: 1px solid #4a4a4a;
+ }
+
+.sticker-sections {
+	background-color: #287527;
+	text-align: center !important;
+	color: #7bed9a;
+}
+
+ .badges-paragraph {
+   display: flex;
+   justify-content: center;
+   background-color: rgb(47,87,193);;
+   color: #dfcde5 !important;
+   border: 1px solid #45284d;
+   margin-top: 5px !important;
+ }
+
+ .badgeborder {
+	 border: 2px solid #b3b3ff;
+ }
+
+.badges-medals-names {
+	background-color: #292983;
+}
+
+.badges-trophies-names {
+	background-color: #811920;
+}
+
+.badges-stickers-names {
+	background-color: #287527;
+}
+
+ .badges-responsive-font {
+ 	color: white !important;
+ 	font-size: 1vw;
+ 	text-align:center;
+ 	font-family: 'Odibee Sans', cursive;
+ 	margin-top: 5px !important;
+ }
+
+.medals-background {
+	background: rgba(84,114,232,1)
+}
+
+.merits-home-background {
+	background: #8546CA;
+}
+
+.trophies-background	{
+	background-color: #6b1016;
+}
+
+.stickers-background {
+	background-color: #308e2e;
+}
+
+.merits-medal-shape{
+ 	padding-top:15px;
+ }
+
+.tabs-merits-font {
+ border-bottom: 2px solid #45284d;
+ text-shadow: -1px 0 #45284d, 0 2px #45284d, 2px 0 #45284d, 0 -1px #45284d;
+ padding: 10px 0px 10px 0px;
+ font-size:2.8em !important;
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ position: float;
+}
+
+ .tabs-merit-background {
+	 background-image: linear-gradient(to top, #ced7e5, #b7bec9, #a0a6ad, #8b8e92, #767778);
+	 border: 1px solid #4a4a4a;
+ }
+
+ .merits-tab-2.active {
+  background-color: #811920 !important;
+ }
+ .merits-tab-3.active {
+  background-color: #287527 !important;
+ }
+.merits-tab-1.active {
+ background-color: #681AA8 !important;
+}
+
+ /* ||||||||||||||||||||||||||||||||||||||||||||||
+  ||||||||||| ACCOUNTS      ||||||||||||||||||||||
+  ||||||||||||||||||||||||||||||||||||||||||||||| */
+
+.messages-titles {
+	background-color: #681AA8;
+	color: white;
+	text-align:center;
+	font-size: 3.3em;
+	border-bottom: 1px solid #b3b3ff;
+	border-top: 1px solid #b3b3ff;
+}
+
+.account-btn {
+	background-color: #274daa !important;
+	border: 1px solid white !important;
+	font-size: 1.5em !important;
+}
+
+.account-list-background {
+	background-color: #292983 !important;
+}
+
+.account-change-background {
+	background-color: #0E0E2D !important;
+}
+
+.account-list-title {
+	background-color: #274daa !important;
+	color: #E69A8DFF !important;
+	border: 1px solid #E69A8DFF !important;
+	font-size: 1.8em !important;
+	margin-bottom: 5px;
+	274daa
+}
+
+.account-list-title:hover {
+	background-color:#5757BF !important;
+}
+
+
+.font-account-info {
+		font-size: 1.8em !important;
+		display: flex;
+    justify-content: center;
+		padding: 8px 0px 8px 0px;
+		text-shadow: -1px 0 #45284d, 0 3px #45284d, 4px 0 #45284d, 0 -1px #45284d !important;
+		border: 1px solid #b3b3ff !important;
+		color: #E69A8DFF !important;
+}
+
+.tabs-account-info {
+    color: #b3b3ff !important;
+    text-shadow: -1px 0 #45284d, 0 3px #45284d, 4px 0 #45284d, 0 -1px #45284d;
+    padding: 15px 0px 15px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size:1.2em !important;
+    text-align: center;
+
+}
+
+.tabs-accounts-background {
+		background-color: #3462d3;
+}
+
+.merits-columns {
+		border: 1px solid black;
+		font-size: 1.5em !important;
+}
+
+.account-title {
+
+	background: rgb(47,87,193);
+	background: radial-gradient(circle, rgba(47,87,193,1) 0%, rgba(12,91,204,1) 19%, rgba(35,47,176,1) 50%, rgba(60,46,166,1) 76%, rgba(60,60,143,1) 100%);
+	color: #b3b3ff;
+	text-align: center;
+	padding:10px 0px 5px 0px !important;
+	border-top: 1px solid #b3b3ff !important;
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||         NEWS                      ||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||| */
+
+.news-comment-title {
+	background-color: #7d6fc6 !important;
+  color: #dfcde5 !important;
+  text-align: center !important;
 }

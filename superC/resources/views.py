@@ -8,10 +8,10 @@ from .forms import MediaVideoForm,MediaImageForm,MediaAudioForm
 # Create your views here.
 
 class ActivitiesView(TemplateView):
-    template_name = 'resources/activities_home.html'
+    template_name = 'resources/homework_home.html'
 
 class DownloadsView(TemplateView):
-    template_name = 'resources/downloads_home.html'
+    template_name = 'resources/library_home.html'
 
 class GamesView(TemplateView):
     template_name = 'resources/games_home.html'
@@ -78,7 +78,7 @@ class ImageDetailView(DetailView):
     model = MediaImageModel
 
 class ImageDeleteView(LoginRequiredMixin,DeleteView):
-    template_name = 'resources/media/media_image_delete.html'
+    template_name = 'resources/media/media_image_delete_form.html'
     model = MediaImageModel
     success_url = reverse_lazy('resources:media')
 

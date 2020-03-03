@@ -2,20 +2,32 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+<div class="container" style='margin-top: 40px;'>
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 0px; padding:0px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+    <h1 class='title-merits archivo-black-font'>Messages Section</h1>
+    <h3 class="messages-titles russo-one-font">Active Conversations</h3>
     <div class="container">
-      <h1 class='display-4 title-merits'>Messages Section</h1>
-      <h3 class="display-4 tabs-merits-font">Chats</h3>
-      {% for messages in list %}
-        {% if messages != user %}
-          <h1 class='list-group-item dropdown-color'><a href="{% url 'accounts:messages_list_content' pk=messages.pk %}" style='color: inherit;'>User: {{ messages.username }}</a></h1>
-          <h1></h1>
-          <div class="dropdown-divider"></div>
-        {% endif %}
-      {% endfor %}
+      {% if list %}
+        {% for messages in list %}
+          {% if messages != user %}
+            <a class='btn btn-primary btn-block account-list-title yanone-font' href="{% url 'accounts:messages_list_content' pk=messages.pk %}" ><span class='far fa-user' style='padding-right:10px;'></span>{{ messages.username }}</a>
+            <div class="dropdown-divider"></div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <h1 class='odibee' style='background-color:#7d6fc6;color:#dfcde5;font-size: 3em; display: flex; justify-content: center;'>You haven't talked to anyone yet!</h1>
+        <div class="container" style="display: flex; justify-content: center;">
+              <img class="col-" style="border: 1px solid #b3b3ff; padding: 0px;" src="{% static "images/built.png" %}"></img>
+        </div>
+        <div class="dropdown-divider"></div>
+        <p class="russo-one-font" style="color:#dfcde5; display: flex; justify-content: center; text-indent:40px; padding:0;margin:0px; background-color:#7d6fc6;">You haven't talked to anyone yet!</p>
+        <p class="russo-one-font" style="color:#dfcde5; font-size: 0.8em; display: flex; justify-content: center; background-color:#7d6fc6;">Click on the Button below to check your progress so far!</p>
+      {% endif %}
     </div>
-    <h1><a class="btn btn-primary custom-btn" style="display: flex; justify-content: center;" href="{% url 'accounts:message_create' %}" style='color: inherit;'>Start a Chat</a></h1>
+    <div class="text-center" style='margin-bottom: 10px;'>
+      <a class="btn btn-primary btn-lg custom-btn russo-one-font"  href="{% url 'accounts:message_create' %}"><span class='fas fa-paper-plane' style='margin-right:10px;'></span>New Message</a>
+      <a class="btn btn-primary btn-lg custom-btn russo-one-font" href="{% url 'homepage' %}"><span class='fas fa-home' style='margin-right:10px;'></span>Homepage</a>>
+    </div>
   </div>
 </div>
 

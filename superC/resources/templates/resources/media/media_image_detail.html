@@ -2,15 +2,14 @@
 {% block content %}
 {% load embed_video_tags %}
 
-
-<div class="container">
   <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71 !important;">
     <h1 class='contentfont firstfont dropdown-color' style='margin:10px;border:10px solid #45284d;padding:20px;'>{{ object.title }} <span class='fas fa-newspaper' style='padding-left:10px;'></span></h1>
     <img src="{{ object.image_file.url }}" class="d-block  jumbo-style" alt="...">
     <div class="dropdown-color firstfont" style='margin:10px;border:10px solid #45284d;padding:20px;'>
         <p class='badges-paragraph ' >{{ object.description|safe|linebreaksbr }}</p>
+          <a class="btn btn-primary med-sm-btn-audio btn-lg" href="{% url 'resources:delete_image' pk=object.pk %}"><span class="fa fa-video-slash" style='padding-right:10px;'></span>Remove Image</a>
     </div>
+
   </div>
-</div>
 
 {% endblock %}

@@ -1,755 +1,827 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container">
-  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
-    <h1 class='title-merits'>Achievements Section</h1>
-
+<div class="container" style='margin-top: 40px;'>
+  <div class="jumbotron jumbotron-fluid" style='border: 1px solid #b3b3ff;' >
     <ul class="nav nav-pills tabs-merit-background" style="margin-top: 0px; color:inherit;">
-      <li class='nav-item tabs-merits-font col-md'><a class='nav-link' data-toggle="pill" style='color: inherit;' href="#medals">Medals</a></li>
-      <li class='nav-item tabs-merits-font col-md'><a class='nav-link' data-toggle="pill" style='color: inherit;' href="#trophies">Trophies</a></li>
-      <li class='nav-item tabs-merits-font col-md'><a class='nav-link' data-toggle="pill" style='color: inherit;' href="#stickers">Stickers</a></li>
+      <li class='nav-item tabs-merits-font russo-one-font col-md' style='border-right: 1px solid black;'><a id='tab-home-merits' class='nav-link hovery active merits-tab-1' style='color:#e7e6e6' data-toggle="pill" href="#home">Home</a></li>
+      <li class='nav-item tabs-merits-font russo-one-font col-md' style='border-right: 1px solid black;'><a id='tab-medals' class='nav-link hovery' style='color:#e7e6e6' data-toggle="pill" href="#medals">Medals</a></li>
+      <li class='nav-item tabs-merits-font russo-one-font col-md'><a id='tab-trophies' class='nav-link merits-tab-2' data-toggle="pill" style='color:#e7e6e6' href="#trophies">Trophies</a></li>
+      <li class='nav-item tabs-merits-font russo-one-font col-md' style='border-left: 1px solid black;'><a id='tab-Stickers' class='nav-link hovery merits-tab-3' data-toggle="pill" style='color:#e7e6e6' href="#stickers">Stickers</a></li>
     </ul>
-    <div class="tab-content">
-      <!-- Row Medals -->
-      <div id="medals" class="tab-pane fade ">
-        <div class="container">
-          <h3 class='badges-font-title'>Grammar Medals</h3>
+    <div class="tab-content" >
+      <div id="home" class="tab-pane active">
+        <div class="container merits-home-background">
+          <h1 class="badge-home-title amatic-sc-font" style='display: flex; justify-content: center;border-top: 10px solid #8546CA'><span class='fas fa-check-double' style='padding-right:30px;'></span>Merits Section</h1>
+          <div class="container">
+            <div class="container" style="display: flex; justify-content: center;margin: 15px 0px 15px 0px;">
+                <img class="col-" style="" src="{% static "images/built.png" %}"></img>
+            </div>
+            <div class="dropdown-divider"></div>
+            <p class="russo-one-font" style="color:#dfcde5; display: flex; justify-content: center; text-indent:40px; padding:0;margin:0px;">This site is currently under development! Come back later!</p>
+            <p class="russo-one-font" style="color:#dfcde5; font-size: 0.8em; display: flex; justify-content: center;"> This site is currently under development! Come back later!</p>
+            <div class="text-center">
+              <a type="button" class="btn btn-primary custom-btn russo-one-font" style='margin-bottom:10px;' href="{% url 'homepage' %}"><span class='fas fa-home' style='margin-right:10px;'></span>Back to Index</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="medals" class="tab-pane fade">
+        <div class="container medals-background">
+            <h1 class='amatic-sc-font medals-title' style='display: flex; justify-content: center;border-top: 10px solid rgba(84,114,232,1)'><span class="fas fa-brain" style='padding-right:30px;'></span>Grammar Medals</h1>
           {% if user.grammar_skills < 100 %}
-              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 100p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.grammar_skills }}p / 100p</p>
           {% elif user.grammar_skills < 250 %}
-              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 250p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.grammar_skills }}p / 250p</p>
           {% elif user.grammar_skills < 500 %}
-              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 500p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.grammar_skills }}p / 500p</p>
           {% elif user.grammar_skills < 800 %}
-              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 800p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.grammar_skills }}p / 800p</p>
           {% elif user.grammar_skills < 1200 %}
-              <p class='badges-paragraph'>Score: {{ user.grammar_skills }}p / 1200p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.grammar_skills }}p / 1200p</p>
           {% else %}
-              <p class='badges-paragraph'>Score: Maximum Level</p>
+              <p class='badges-paragraph share-tech-font'>Score: Maximum Level</p>
           {% endif %}
-          <div class="row badgeborder">
-            <div class="col badgeborder">
+          <div class="row">
+            <div class="col merits-medal-shape" style='margin-left: 15px !important;'>
               {% if user.grammar_skills < 100 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_grammar.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_bronze_grammar.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Bronze Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.grammar_skills < 250 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else  %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_grammar.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_silver_grammar.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Silver Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.grammar_skills < 500 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_grammar.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_gold_grammar.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Gold Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.grammar_skills < 800 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_grammar.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_platinum_grammar.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Platinum Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-right:15px;'>
               {% if user.grammar_skills < 1200 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_grammar.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_diamond_grammar.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Diamond Medal</p>
             </div>
           </div>
-          <h3 class='badges-font-title '>Listening Medals</h3>
+          <h1 class='amatic-sc-font medals-title' style='display: flex; justify-content: center;'><span class="fas fa-headphones-alt" style='padding-right:30px;'></span>Listening Medals</h1>
           {% if user.listening_skills < 100 %}
-              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 100p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.listening_skills }}p / 100p</p>
           {% elif user.listening_skills < 250 %}
-              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 250p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.listening_skills }}p / 250p</p>
           {% elif user.listening_skills < 500 %}
-              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 500p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.listening_skills }}p / 500p</p>
           {% elif user.listening_skills < 800 %}
-              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 800p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.listening_skills }}p / 800p</p>
           {% elif user.listening_skills < 1200 %}
-              <p class='badges-paragraph'>Score: {{ user.listening_skills }}p / 1200p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.listening_skills }}p / 1200p</p>
           {% else %}
-              <p class='badges-paragraph'>Score: Maximum Level</p>
+              <p class='badges-paragraph share-tech-font'>Score: Maximum Level</p>
           {% endif %}
           <div class="row">
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-left: 15px !important;'>
               {% if user.listening_skills < 100 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_listening.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_bronze_listening.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Bronze Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.listening_skills < 250 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_listening.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_silver_listening.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Silver Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.listening_skills < 500 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_listening.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_gold_listening.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Gold Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.listening_skills < 800 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_listening.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_platinum_listening.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Platinum Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-right:15px;'>
               {% if user.listening_skills < 1200 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_listening.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_diamond_listening.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Diamond Medal</p>
             </div>
           </div>
-          <h3 class='badges-font-title'>Writing Medals</h3>
+          <h1 class='amatic-sc-font medals-title' style='display: flex; justify-content: center;'><span class="fas fa-pencil-alt" style='padding-right:30px;'></span>Writing Medals</h1>
           {% if user.writing_skills < 100 %}
-              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 100p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.writing_skills }}p / 100p</p>
           {% elif user.writing_skills < 250 %}
-              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 250p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.writing_skills }}p / 250p</p>
           {% elif user.writing_skills < 500 %}
-              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 500p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.writing_skills }}p / 500p</p>
           {% elif user.writing_skills < 800 %}
-              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 800p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.writing_skills }}p / 800p</p>
           {% elif user.writing_skills < 1200 %}
-              <p class='badges-paragraph'>Score: {{ user.writing_skills }}p / 1200p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.writing_skills }}p / 1200p</p>
           {% else %}
-              <p class='badges-paragraph'>Score: Maximum Level</p>
+              <p class='badges-paragraph share-tech-font'>Score: Maximum Level</p>
           {% endif %}
           <div class="row">
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-left: 15px !important;'>
               {% if user.writing_skills < 100 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_writing.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_bronze_writing.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Bronze Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.writing_skills < 250 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_writing.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_silver_writing.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Silver Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.writing_skills < 500 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_writing.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_gold_writing.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Gold Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.writing_skills < 800 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_writing.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_platinum_writing.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Platinum Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-right:15px;'>
               {% if user.writing_skills < 1200 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_writing.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_diamond_writing.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Diamond Medal</p>
             </div>
           </div>
-          <h3 class='badges-font-title'>Vocabulary Medals</h3>
+          <h1 class='amatic-sc-font medals-title' style='display: flex; justify-content: center;'><span class="fas fa-language" style='padding-right:30px;'></span>Vocabulary Medals</h1>
           {% if user.vocabulary_skills < 100 %}
-              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 100p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.vocabulary_skills }}p / 100p</p>
           {% elif user.vocabulary_skills < 250 %}
-              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 250p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.vocabulary_skills }}p / 250p</p>
           {% elif user.vocabulary_skills < 500 %}
-              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 500p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.vocabulary_skills }}p / 500p</p>
           {% elif user.vocabulary_skills < 800 %}
-              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 800p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.vocabulary_skills }}p / 800p</p>
           {% elif user.vocabulary_skills < 1200 %}
-              <p class='badges-paragraph'>Score: {{ user.vocabulary_skills }}p / 1200p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.vocabulary_skills }}p / 1200p</p>
           {% else %}
-              <p class='badges-paragraph'>Score: Maximum Level</p>
+              <p class='badges-paragraph share-tech-font'>Score: Maximum Level</p>
           {% endif %}
           <div class="row ">
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-left: 15px !important;'>
               {% if user.vocabulary_skills < 100 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_vocabulary.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_bronze_vocabulary.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Bronze Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.vocabulary_skills < 250 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_vocabulary.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_silver_vocabulary.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Silver Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.vocabulary_skills < 500 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_vocabulary.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_gold_vocabulary.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Gold Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.vocabulary_skills < 800 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_vocabulary.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_platinum_vocabulary.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Platinum Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-right:15px;'>
               {% if user.vocabulary_skills < 1200 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_vocabulary.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_diamond_vocabulary.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Diamond Medal</p>
             </div>
           </div>
-          <h3 class='badges-font-title'>Speaking Medals</h3>
+          <h1 class='amatic-sc-font medals-title' style='display: flex; justify-content: center;'><span class="far fa-comments" style='padding-right:30px;'></span>Speaking Medals</h1>
           {% if user.oral_skills < 100 %}
-              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 100p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.oral_skills }}p / 100p</p>
           {% elif user.oral_skills < 250 %}
-              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 250p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.oral_skills }}p / 250p</p>
           {% elif user.oral_skills < 500 %}
-              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 500p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.oral_skills }}p / 500p</p>
           {% elif user.oral_skills < 800 %}
-              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 800p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.oral_skills }}p / 800p</p>
           {% elif user.oral_skills < 1200 %}
-              <p class='badges-paragraph'>Score: {{ user.oral_skills }}p / 1200p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.oral_skills }}p / 1200p</p>
           {% else %}
-              <p class='badges-paragraph'>Score: Maximum Level</p>
+              <p class='badges-paragraph share-tech-font'>Score: Maximum Level</p>
           {% endif %}
           <div class="row ">
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-left: 15px !important;'>
               {% if user.oral_skills < 100 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_speaking.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_bronze_speaking.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Bronze Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.oral_skills < 250 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_speaking.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_silver_speaking.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Silver Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.oral_skills < 500 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_speaking.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_gold_speaking.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Gold Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.oral_skills < 800 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_speaking.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_platinum_speaking.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Platinum Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-right:15px;'>
               {% if user.oral_skills < 1200 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_speaking.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_diamond_speaking.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Diamond Medal</p>
             </div>
           </div>
-          <h3 class='badges-font-title'>Reading Medals</h3>
+          <h1 class='amatic-sc-font medals-title' style='display: flex; justify-content: center;'><span class="fas fa-book" style='padding-right:30px;'></span>Reading Medals</h1>
           {% if user.reading_skills < 100 %}
-              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 100p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.reading_skills }}p / 100p</p>
           {% elif user.reading_skills < 250 %}
-              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 250p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.reading_skills }}p / 250p</p>
           {% elif user.reading_skills < 500 %}
-              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 500p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.reading_skills }}p / 500p</p>
           {% elif user.reading_skills < 800 %}
-              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 800p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.reading_skills }}p / 800p</p>
           {% elif user.reading_skills < 1200 %}
-              <p class='badges-paragraph'>Score: {{ user.reading_skills }}p / 1200p</p>
+              <p class='badges-paragraph share-tech-font'>Score: {{ user.reading_skills }}p / 1200p</p>
           {% else %}
-              <p class='badges-paragraph'>Score: Maximum Level</p>
+              <p class='badges-paragraph share-tech-font'>Score: Maximum Level</p>
           {% endif %}
-          <div class="row ">
-            <div class="col badgesbox">
+          <div class="row" style='margin-bottom:10px;'>
+            <div class="col merits-medal-shape" style='margin-left: 15px !important;'>
               {% if user.reading_skills < 100 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_bronze_reading.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_bronze_reading.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Bronze Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.reading_skills < 250 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_silver_reading.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_silver_reading.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Silver Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.reading_skills < 500 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_gold_reading.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_gold_reading.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Gold Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape">
               {% if user.reading_skills < 800 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_platinum_reading.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_platinum_reading.png' %}"  alt="">
               {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Platinum Medal</p>
             </div>
-            <div class="col badgesbox">
+            <div class="col merits-medal-shape" style='margin-right:15px;'>
               {% if user.reading_skills < 1200 %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/locked.png' %}"  alt="">
               {% else %}
-                <img class='badgeborder' src="{% static 'images/merits/medals/medal_diamond_reading.png' %}"  alt="">
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/medals/medal_diamond_reading.png' %}"  alt="">
+              {% endif %}
+              <p class='squada-font badges-responsive-font badges-medals-names'>Diamond Medal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="trophies" class="tab-pane fade trophies-background">
+        <div class="container trophies-background">
+          <h1 class='amatic-sc-font trophies-title' style='display: flex; justify-content: center;border-top: 10px solid #6b1016'><span class="fas fa-trophy" style='padding-right:30px;'></span>Trophies Earned: <span style='padding-left:10px;color:white;' id='trophy-number'>0</span></h1>
+          <div class="row ">
+            <div class="col badges-shape"  style='margin-left: 15px !important;'>
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Listen to 5 Songs</p>
+              {% if user.songs_listened >= 5 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/listen_five_songs.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Listen to 10 Songs</p>
+              {% if user.songs_listened >= 10 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/listen_ten_songs.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Listen to 20 Songs</p>
+              {% if user.songs_listened >= 20 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/listen_twenty_songs.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              {% if user.songs_sang > 0 %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Sang a Song</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/sing_one_song.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Secret</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape" style='margin-right:15px;'>
+              {% if user.songs_sang >= 5 %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Sang 5 Songs</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/sing_five_songs.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Secret</p>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col badges-shape" style='margin-left: 15px !important;'>
+            <p class='squada-font badges-responsive-font badges-trophies-names'>Read 1 Short Story</p>
+              {% if user.stories_read > 0 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/read_one_story.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Read 5 Short Stories</p>
+              {% if user.stories_read >= 5 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/read_five_stories.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder badges-trophies-names' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Read 8 Short Stories</p>
+              {% if user.stories_read >= 8 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/read_eight_stories.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              {% if user.books_finished > 0 %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Finished A Book</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/read_a_book.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Secret</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape" style='margin-right:15px;'>
+              {% if user.books_finished >= 3 %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Finished 3 Books</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/read_second_book.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Secret</p>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col badges-shape" style='margin-left: 15px !important;'>
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Learned 20 words</p>
+              {% if user.words_learned >= 20 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/learned_twenty_words.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Learned 50 words</p>
+              {% if user.words_learned >= 50 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/learned_fifty_words.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Learned 100 words</p>
+              {% if user.words_learned >= 100 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/learned_hundred_words.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Learned 200 words</p>
+              {% if user.words_learned >= 200 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/learned_two_hundred_words.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape" style='margin-right:15px;'>
+              {% if user.irregular_verbs >= 50 %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Learn 50 I. Verbs</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/fifty_irregular_verbs.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <p class='squada-font badges-responsive-font badges-trophies-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Secret</p>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col badges-shape" style='margin-left: 15px !important;'>
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Talked for 5 hours</p>
+              {% if user.talking_time >= 5 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/talked_two_hours.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Talked for 12 hours</p>
+              {% if user.talking_time >= 12 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/talked_five_hours.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Talked for 20 hours</p>
+              {% if user.talking_time >= 20 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/talked_ten_hours.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>No Spanish 5hs</p>
+              {% if user.no_spanish_time >= 5 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/no_spa_five.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape" style='margin-right:15px;'>
+              <p class='squada-font badges-responsive-font badges-trophies-names'>No Spanish 10hs</p>
+              {% if user.no_spanish_time >= 10 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/no_spa_ten.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row" style='margin-bottom:10px;'>
+            <div class="col badges-shape" style='margin-left: 15px !important;'>
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Three Writings</p>
+              {% if user.writing_assignments >= 3 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/three_writings.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Ten Writings</p>
+              {% if user.writing_assignments >= 10 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/ten_writings.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Twenty Writings</p>
+              {% if user.writing_assignments >= 20 %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/twenty_writings.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape">
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Perfect Writing</p>
+              {% if user.perfect_writing == True %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/perfect_writing.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
+              {% endif %}
+            </div>
+            <div class="col badges-shape" style='margin-right:15px;'>
+              <p class='squada-font badges-responsive-font badges-trophies-names'>Wrote a Book</p>
+              {% if user.book_written == True %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/writing_book.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Achieved</p>
+              {% else %}
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-trophies-names'>Not Achieved</p>
               {% endif %}
             </div>
           </div>
         </div>
       </div>
-      <div id="trophies" class="tab-pane fade ">
-      <div class="container">
-        <h1 class='contentfont' style='display: flex; justify-content: center; background-color: #8B5FBF; padding-top:12px; border: 5px solid #45284d ;'><span class="fas fa-trophy" style='padding-right:30px;'></span>Trophies Earned: <span id='trophy-number'></span></h1>
-      </div>
-      <div class="container">
-        <div class="row ">
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Listen to 5 Songs</p>
-            {% if user.songs_listened >= 5 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/listen_five_songs.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Listen to 10 Songs</p>
-            {% if user.songs_listened >= 10 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/listen_ten_songs.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Listen to 20 Songs</p>
-            {% if user.songs_listened >= 20 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/listen_twenty_songs.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            {% if user.songs_sang > 0 %}
-              <p class='badges-paragraph'>Sang a Song</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/sing_one_song.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <p class='badges-paragraph'>???</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
-              <p class='badges-paragraph'>Secret</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            {% if user.songs_sang >= 5 %}
-              <p class='badges-paragraph'>Sang 5 Songs</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/sing_five_songs.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <p class='badges-paragraph'>???</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
-              <p class='badges-paragraph'>Secret</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Read 1 Short Story</p>
-            {% if user.stories_read > 0 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/read_one_story.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Read 5 Short Stories</p>
-            {% if user.stories_read >= 5 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/read_five_stories.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Read 8 Short Stories</p>
-            {% if user.stories_read >= 8 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/read_eight_stories.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            {% if user.books_finished > 0 %}
-              <p class='badges-paragraph'>Finished A Book</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/read_a_book.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <p class='badges-paragraph'>???</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
-              <p class='badges-paragraph'>Secret</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            {% if user.books_finished >= 3 %}
-              <p class='badges-paragraph'>Finished 3 Books</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/read_second_book.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <p class='badges-paragraph'>???</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
-              <p class='badges-paragraph'>Secret</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Learned 20 words</p>
-            {% if user.words_learned >= 20 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/learned_twenty_words.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Learned 50 words</p>
-            {% if user.words_learned >= 50 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/learned_fifty_words.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Learned 100 words</p>
-            {% if user.words_learned >= 100 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/learned_hundred_words.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Learned 200 words</p>
-            {% if user.words_learned >= 200 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/learned_two_hundred_words.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            {% if user.irregular_verbs >= 50 %}
-              <p class='badges-paragraph'>Learn 50 I. Verbs</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/fifty_irregular_verbs.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <p class='badges-paragraph'>???</p>
-              <img class='badgeborder' src="{% static 'images/merits/trophies/secret.png' %}"  alt="">
-              <p class='badges-paragraph'>Secret</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Talked for 5 hours</p>
-            {% if user.talking_time >= 5 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/talked_two_hours.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Talked for 12 hours</p>
-            {% if user.talking_time >= 12 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/talked_five_hours.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Talked for 20 hours</p>
-            {% if user.talking_time >= 20 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/talked_ten_hours.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>No Spanish 5hs</p>
-            {% if user.no_spanish_time >= 5 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/no_spa_five.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>No Spanish 10hs</p>
-            {% if user.no_spanish_time >= 10 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/no_spa_ten.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Three Writings</p>
-            {% if user.writing_assignments >= 3 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/three_writings.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Ten Writings</p>
-            {% if user.writing_assignments >= 10 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/ten_writings.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Twenty Writings</p>
-            {% if user.writing_assignments >= 20 %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/twenty_writings.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Perfect Writing</p>
-            {% if user.perfect_writing == True %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/perfect_writing.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-          <div class="col badgesbox">
-            <p class='badges-paragraph'>Wrote a Book</p>
-            {% if user.book_written == True %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/writing_book.png' %}"  alt="">
-              <p class='badges-paragraph'>Achieved</p>
-            {% else %}
-              <img class='badgeborder' src="{% static 'images/merits/trophies/locked.png' %}"  alt="">
-              <p class='badges-paragraph'>Not Achieved</p>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      </div>
-      <div id="stickers" class="tab-pane fade">
+      <div id="stickers" class="tab-pane fade stickers-background">
         <div class="container">
-          <h1 class='contentfont' style='display: flex; justify-content: center; background-color: #8B5FBF; padding-top:12px; border: 5px solid #45284d ;'><span class="fas fa-certificate" style='padding-right:30px;'></span>Stickers Earned: <span id='sticker-number'>0</span></h1>
+          <h1 class='amatic-sc-font stickers-title' style='display: flex; justify-content: center;border-top: 10px solid #308e2e'><span class="fas fa-certificate" style='padding-right:30px;'></span>Stickers Earned: <span style='padding-left:10px;color:white;' id='trophy-number' id='sticker-number'>0</span></h1>
         </div>
         <div class="container">
-          <h2 class='firstfont dropdown-color'> Videogames <span class='fas fa-gamepad'></span> </h2>
+          <h2 class='odibee sticker-sections'> Videogames <span class='fas fa-gamepad'></span> </h2>
         </div>
         <div class="container">
           <div class="row ">
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if user.monkey_island == True %}
-                <p class='badges-paragraph'>Monkey Island</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/mi_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Monkey Island</p>
+                <img class='mx-auto d-block img-fluid badgeborder test-position' src="{% static 'images/merits/stickers/mi_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder test-position' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.the_last_door == True %}
-                <p class='badges-paragraph'>The Last Door</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/tld_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>The Last Door</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/tld_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.to_the_moon == True %}
-                <p class='badges-paragraph'>To The Moon</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/ttm_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>To The Moon</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/ttm_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.oxenfree == True %}
-                <p class='badges-paragraph'>Oxenfree</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/of_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Oxenfree</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/of_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.valiant_hearts == True %}
-                <p class='badges-paragraph'>Valiant Hearts</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/vh_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Valiant Hearts</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/vh_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
           </div>
         </div>
         <div class="container">
-          <h2 class='firstfont dropdown-color'> Films <span class='fas fa-film'></span></h2>
+          <h2 class='odibee sticker-sections'> Films <span class='fas fa-film'></span></h2>
         </div>
         <div class="container">
           <div class="row ">
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.walter_mitty == True %}
-                <p class='badges-paragraph'>Walter Mitty</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/wm_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Walter Mitty</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/wm_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.big_fish == True %}
-                <p class='badges-paragraph'>Big Fish</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/bf_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Big Fish</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/bf_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.warm_bodies == True %}
-                <p class='badges-paragraph'>Warm Bodies</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/wb_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Warm Bodies</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/wb_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.the_help == True %}
-                <p class='badges-paragraph'>The Help</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/th_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>The Help</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/th_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.reign_over_me == True %}
-                <p class='badges-paragraph'>Reign Over Me</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/gwh_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Reign Over Me</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/gwh_watched.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>Locked</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Locked</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/locked.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
           </div>
         </div>
         <div class="container">
-          <h2 class='firstfont dropdown-color'> Secrets <span class='fas fa-mask'></span></h2>
+          <h2 class='odibee sticker-sections'> Secrets <span class='fas fa-mask'></span></h2>
         </div>
         <div class="container">
           <div class="row ">
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.phonemes_learned >= 44 %}
-                <p class='badges-paragraph'>Learned All Phonemes</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/all_phonemes.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Learned All Phonemes</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/all_phonemes.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>???</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.talked_to_native == True %}
-                <p class='badges-paragraph'>Talked to a Native</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/talk_native.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Talked to a Native</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/talk_native.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>???</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.cinema_day == True %}
-                <p class='badges-paragraph'>Went to the cinema </p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/cinema.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Went to the cinema </p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/cinema.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>???</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.escape_room == True %}
-                <p class='badges-paragraph'>Escaped A Room</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/escape_room.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Escaped A Room</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/escape_room.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>???</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
-            <div class="col badgesbox">
+            <div class="col badges-shape">
               {% if  user.every_event == True %}
-                <p class='badges-paragraph'>Completed All Events</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/special_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Completed All Events</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/special_completed.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Achieved</p>
               {% else %}
-                <p class='badges-paragraph'>???</p>
-                <img class='badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>???</p>
+                <img class='mx-auto d-block img-fluid badgeborder' src="{% static 'images/merits/stickers/secret.png' %}"  alt="">
+                <p class='squada-font badges-responsive-font badges-stickers-names'>Not Achieved</p>
               {% endif %}
             </div>
           </div>

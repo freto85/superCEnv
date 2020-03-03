@@ -5,13 +5,13 @@
 
 <div class="container">
   <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71 !important;">
-    <h1 class='contentfont firstfont dropdown-color' style='margin:10px;border:10px solid #45284d;padding:20px;'>{{ object.title }} <span class='fas fa-newspaper' style='padding-left:10px;'></span></h1>
-    <audio controls>
+    <h1 class='contentfont firstfont dropdown-color archivo-black-font' style='margin:10px;border:10px solid #45284d;padding:20px;'><span class='fas fa-headphones' style='padding-right:10px;'></span>{{ object.title }}</h1>
+    <audio controls class='col-12'>
       <source src="{{ object.audio_file.url }}" type="audio/mpeg">
     Your browser does not support the audio element.
     </audio>
     <div class="dropdown-color firstfont" style='margin:10px;border:10px solid #45284d;padding:20px;'>
-        <p class='badges-paragraph ' >{{ object.text|safe|linebreaksbr }}</p>
+        <p class='badges-paragraph odibee' >{{ object.description|safe|linebreaksbr }}</p>
     </div>
   </div>
 </div>

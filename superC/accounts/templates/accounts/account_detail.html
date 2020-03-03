@@ -3,79 +3,80 @@
 
 {% block content %}
 
-<div class="container">
-  <div class="jumbotron jumbotron-fluid jumbo-background-one" style="margin-top: 40px; border: 10px solid #45284d;">
+<div class="container" style='margin-top: 40px;'>
+  <div class="jumbotron jumbotron-fluid account-change-background" style='border: 1px solid #b3b3ff;'>
+    <h1 class="title-merits archivo-black-font" style='border: 1px solid #b3b3ff;'>Account Info</h1>
     <div class="container">
-      <h1 class="display-4 contentfont"><span class='fas fa-user-circle'></span> Account Info</h1>
-      <div class="dropdown-divider"></div>
       <div class="container">
-        <ul class="list-group" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
-          <li class="list-group-item firstfont dropdown-color" style="display: flex; justify-content: center;"><span class='far fa-id-badge'></span>Personal Info</li>
-          <li class="list-group-item dropdown-color">Username: {{ object.username }}</li>
-          <li class="list-group-item dropdown-color">Name: {{ object.first_name }} {{ object.last_name }}</li>
-          <li class="list-group-item dropdown-color">E-Mail Address: {{ object.email }}</li>
-          <li class="list-group-item dropdown-color">Account Creation Date: {{ object.date_joined }}</li>
+        <ul class="list-group" style="margin-top: 40px; border: 1px solid #b3b3ff;; background-color:#643a71;">
+          <li class="list-group-item firstfont dropdown-color russo-one-font" style="display: flex; justify-content: center;"><span class='far fa-id-badge'></span>Personal Info</li>
+          <li class="list-group-item dropdown-color russo-one-font">Username: {{ object.username }}</li>
+          <li class="list-group-item dropdown-color russo-one-font">Name: {{ object.first_name }} {{ object.last_name }}</li>
+          <li class="list-group-item dropdown-color russo-one-font">E-Mail Address: {{ object.email }}</li>
+          <li class="list-group-item dropdown-color russo-one-font">Account Creation Date: {{ object.date_joined }}</li>
         </ul>
       </div>
-
-      <div class="dropdown-divider"></div>
-
       <div class="container">
-        <ul class="list-group" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
-          <li class="list-group-item firstfont dropdown-color" style="display: flex; justify-content: center;"><span class='fas fa-info-circle'></span> Merits </li>
-
-          <li class="list-group-item dropdown-color">Bronze Medals Earned: <span id='bronze'>0</span></li>
-          <li class="list-group-item dropdown-color">Silver Medals Earned: <span id='silver'>0</span></li>
-          <li class="list-group-item dropdown-color">Gold Medals Earned: <span id='gold'>0</span></li>
-          <li class="list-group-item dropdown-color">Platinum Medals Earned: <span id='platinum'>0</span></li>
-          <li class="list-group-item dropdown-color">Diamond Medals Earned: <span id='diamond'>0</span></li>
-          <li class="list-group-item dropdown-color">Trophies Unlocked: <span id='trophy-number'>0</span></li>
-          <li class="list-group-item dropdown-color">Stickers Unlocked: <span id='sticker-number'>0</span></li>
-          <div class="dropdown-divider"></div>
-          <li class="list-group-item dropdown-color">Grammar Skills Score: {{ object.grammar_skills }}</li>
-          <li class="list-group-item dropdown-color">Listening Skills Score: {{ object.listening_skills }}</li>
-          <li class="list-group-item dropdown-color">Writing Skills Score: {{ object.writing_skills }}</li>
-          <li class="list-group-item dropdown-color">Vocabulary Skills Score: {{ object.vocabulary_skills }}</li>
-          <li class="list-group-item dropdown-color">Oral Skills Score: {{ object.oral_skills }}</li>
-          <li class="list-group-item dropdown-color">Reading Skills Score: {{ object.reading_skills }}</li>
+        <ul class="list-group" style="margin-top: 40px; border: 1px solid #b3b3ff; background-color:#643a71;">
+          <li class="list-group-item firstfont russo-one-font dropdown-color" style="display: flex; justify-content: center;"><span class='fas fa-info-circle'></span> Merits </li>
+          <li class="list-group-item dropdown-color russo-one-font">Bronze Medals Earned: <span id='bronze'>0</span></li>
+          <li class="list-group-item dropdown-color russo-one-font">Silver Medals Earned: <span id='silver'>0</span></li>
+          <li class="list-group-item dropdown-color russo-one-font">Gold Medals Earned: <span id='gold'>0</span></li>
+          <li class="list-group-item dropdown-color russo-one-font">Platinum Medals Earned: <span id='platinum'>0</span></li>
+          <li class="list-group-item dropdown-color russo-one-font">Diamond Medals Earned: <span id='diamond'>0</span></li>
+          <li class="list-group-item dropdown-color russo-one-font">Trophies Unlocked: <span id='trophy-number'>0</span></li>
+          <li class="list-group-item dropdown-color russo-one-font">Stickers Unlocked: <span id='sticker-number'>0</span></li>
         </ul>
+          <div class="dropdown-divider"></div>
       </div>
-      <div class="dropdown-divider"></div>
+      {% if user.is_superuser %}
+        <div class="container">
+          <ul class="list-group" style="margin-top: 40px; border: 1px solid #b3b3ff; background-color:#643a71;">
+            <li class="list-group-item dropdown-color russo-one-font">Grammar Skills Score: {{ object.grammar_skills }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Listening Skills Score: {{ object.listening_skills }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Writing Skills Score: {{ object.writing_skills }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Vocabulary Skills Score: {{ object.vocabulary_skills }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Oral Skills Score: {{ object.oral_skills }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Reading Skills Score: {{ object.reading_skills }}</li>
+          </ul>
+        </div>
 
-      <div class="container">
-        <ul class="list-group" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
-          <li class="list-group-item firstfont dropdown-color" style="display: flex; justify-content: center;"><span class='fas fa-info-circle'></span> Stats</li>
-
-          <li class="list-group-item dropdown-color">Short Stories Read: {{ object.stories_read }}</li>
-          <li class="list-group-item dropdown-color">Books Finished: {{ object.books_finished }}</li>
-          <li class="list-group-item dropdown-color">Words Learned: {{ object.words_learned }}</li>
-          <li class="list-group-item dropdown-color">Irregular Verbs Known: {{ object.irregular_verbs }}</li>
-          <li class="list-group-item dropdown-color">Talking Time: {{ object.talking_time }}</li>
-          <li class="list-group-item dropdown-color">Maximum amount of hours without using Spanish: {{ object.no_spanish_time }}</li>
-          <li class="list-group-item dropdown-color">Writing Assignments Passed: {{ object.writing_assignments }}</li>
-          <li class="list-group-item dropdown-color">Songs Used: {{ object.songs_listened }}</li>
-          <li class="list-group-item dropdown-color">Songs Sang: {{ object.songs_sang }}</li>
-          <li class="list-group-item dropdown-color">Events Finished: 0</li>
-          <div class="dropdown-divider"></div>
-          <li class="list-group-item dropdown-color">The Game of Life Wins: {{ object.game_of_life_won }}</li>
-          <li class="list-group-item dropdown-color">Max Scrabble Points: {{ object.scrabble_points }}</li>
-          <li class="list-group-item dropdown-color">Heave Ho! Worlds cleared: {{ object.heave_ho_worlds }}</li>
-          <li class="list-group-item dropdown-color">Monopoly Games Won: {{ object.monopoly_won }}</li>
-          <li class="list-group-item dropdown-color">Max Dart Points: {{ object.max_dart_points }}</li>
-          <li class="list-group-item dropdown-color">Human Fall Flat Worlds Cleared: {{ object.human_fall_flat_worlds }}</li>
-          <li class="list-group-item dropdown-color">Jenga Matches Won: {{ object.jenga_won }}</li>
-          <li class="list-group-item dropdown-color">Stick Fight Games Won: {{ object.stick_fight_won }}</li>
-          <li class="list-group-item dropdown-color">Operation Games Won: {{ object.operation_won }}</li>
-          <li class="list-group-item dropdown-color">Pikuniku Levels Cleared: {{ object.pikuniku_levels }}</li>
-          <li class="list-group-item dropdown-color">Battleship Matches Won: {{ object.battleship_won }}</li>
-          <li class="list-group-item dropdown-color">Lovers in a Dangerous Spacetime Levels Cleared: {{ object.lovers_levels }}</li>
-          <li class="list-group-item dropdown-color">Bombs Defused in Keep Talking and Nobody Explodes: {{ object.defused_bomb }}</li>
-          <li class="list-group-item dropdown-color">Chemistry Experiments Performed: {{ object.chemistry_performed }}</li>
-          <li class="list-group-item dropdown-color">Baked a Recipe?: {{ object.writing_assignments }}</li>
-        </ul>
-    </div>
+        <div class="container">
+          <ul class="list-group" style="margin-top: 40px; border: 1px solid #b3b3ff; background-color:#643a71;">
+            <li class="list-group-item firstfont dropdown-color" style="display: flex; justify-content: center;"><span class='fas fa-info-circle'></span> Stats</li>
+            <li class="list-group-item dropdown-color russo-one-font">Short Stories Read: {{ object.stories_read }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Books Finished: {{ object.books_finished }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Words Learned: {{ object.words_learned }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Irregular Verbs Known: {{ object.irregular_verbs }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Talking Time: {{ object.talking_time }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Maximum amount of hours without using Spanish: {{ object.no_spanish_time }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Writing Assignments Passed: {{ object.writing_assignments }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Songs Used: {{ object.songs_listened }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Songs Sang: {{ object.songs_sang }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Events Finished: 0</li>
+            <div class="dropdown-divider"></div>
+            <li class="list-group-item dropdown-color russo-one-font">The Game of Life Wins: {{ object.game_of_life_won }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Max Scrabble Points: {{ object.scrabble_points }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Heave Ho! Worlds cleared: {{ object.heave_ho_worlds }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Monopoly Games Won: {{ object.monopoly_won }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Max Dart Points: {{ object.max_dart_points }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Human Fall Flat Worlds Cleared: {{ object.human_fall_flat_worlds }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Jenga Matches Won: {{ object.jenga_won }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Stick Fight Games Won: {{ object.stick_fight_won }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Operation Games Won: {{ object.operation_won }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Pikuniku Levels Cleared: {{ object.pikuniku_levels }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Battleship Matches Won: {{ object.battleship_won }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Lovers in a Dangerous Spacetime Levels Cleared: {{ object.lovers_levels }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Bombs Defused in Keep Talking and Nobody Explodes: {{ object.defused_bomb }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Chemistry Experiments Performed: {{ object.chemistry_performed }}</li>
+            <li class="list-group-item dropdown-color russo-one-font">Baked a Recipe?: {{ object.writing_assignments }}</li>
+          </ul>
+        </div>
+      {% endif %}
   </div>
-  <a class="btn btn-primary btn-lg custom-btn" href="{% url 'homepage' %}" role='button' style="display: flex; justify-content: center; margin-top: 30px !important;">Back to Index</a>
+  <div class="text-center" style='margin-bottom: 10px;'>
+    <a class="btn btn-primary custom-btn btn-lg russo-one-font" href="{% url 'homepage' %}" style='margin: 10px 0px 10px 0px;' role='button'>Back to Index</a>
+  </div>
 </div>
 <script type="text/javascript">
   var medals = ['{{ object.grammar_skills }}','{{ object.listening_skills }}','{{ object.writing_skills }}','{{ object.vocabulary_skills }}','{{ object.oral_skills }}', '{{ object.reading_skills }}']

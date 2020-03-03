@@ -5,7 +5,7 @@ class NewsForm(forms.ModelForm):
 
     class Meta():
         model = News
-        fields = ('author','title','text')
+        fields = ('author','title','text','image_file')
 
         widgets = {
             'title':forms.TextInput(attrs={'class':'texinputclass'}),

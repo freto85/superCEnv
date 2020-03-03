@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 10px solid #45284d; background-color:#643a71;">
-      <h1 class='contentfont'>Delete Embedded Video</h1>
-    <div class="container firstfont dropdown-color" style='padding:20px;'>
+<div class="container" style='margin-top:40px;'>
+  <div class="jumbotron jumbotron-fluid">
+    <h1 class="title-merits archivo-black-font"><span class="fas fa-headphones" style='padding-right:30px;'></span>Remove Video</h1>
+    <div class="container image-create-form" style='padding:20px;'>
       <form method="post">
         {% csrf_token %}
-        <p class='badges-paragraph'>Are you sure?</p>
-        <input type="submit" class='btn btn-primary btn-block custom-btn' value='Confirm'>
+        <p class='russo-one-font'>Are you sure?</p>
+        <input type="submit" class='btn btn-primary custom-btn' value='Confirm'>
+        <a class="btn btn-primary custom-btn" href="{% url 'resources:media' %}">Cancel</a>
       </form>
     </div>
   </div>

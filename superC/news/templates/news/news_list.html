@@ -2,29 +2,34 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
-    <div class="container">
-      <h1 class='contentfont'>Newsfeed</h1>
-    </div>
+<div class="container" style='margin-top: 40px;'>
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 0px; padding:0px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+    <h1 class="title-merits archivo-black-font" style='border: 1px solid #b3b3ff;'><span class='fas fa-newspaper' style='padding-right:15px;'></span>Newsfeed</h1>
     {% if user.is_superuser %}
-        <a type="button" class="btn btn-primary custom-btn btn-lg btn-block" href="{% url 'news:create_news' %}" role='button'>New Post</a>
-        <a type="button" class="btn btn-primary custom-btn btn-lg btn-block" href="{% url 'news:draft_news' %}" role='button'>View Drafts</a>
+      <div class="dropdown-divider"></div>
+      <div class="col-12">
+        <a type="button" class="btn btn-primary custom-btn btn-lg centerstage share-tech-font" href="{% url 'news:create_news' %}" role='button'>New Post</a>
+        <a type="button" class="btn btn-primary custom-btn btn-lg centerstage  share-tech-font" href="{% url 'news:draft_news' %}" role='button'>View Drafts</a>
+      </div>
     {% endif %}
     <div class="dropdown-divider"></div>
-    {% for news in news_list %}
-      <div class="container">
-            <h1 class='firstfont dropdown-color'><a href="{% url 'news:detail_news' pk=news.pk %}" style='color: inherit;'>{{ news.title }}</a></h1>
-            <div class="date">
-                <p class='badges-paragraph'>Published on: {{ news.published_date|date:"D M Y"}}</p>
-            </div>
-            <a class='badges-paragraph' href="{% url 'news:detail_news' pk=news.pk %}" style='color: inherit;'>Comments: {{news.approve_comments.count}}</a>
-
-      </div>
-      <div class="dropdown-divider"></div>
-    {% endfor %}
-
+    {% if news_list %}
+      {% for news in news_list %}
+        <div class="container" style='border: 2px solid #b3b3ff;'>
+              <h1 class='firstfont dropdown-color odibee' style='border: 1px solid #b3b3ff; margin: 10px 0px 5px 0px;'><a href="{% url 'news:detail_news' pk=news.pk %}" style='color: inherit;'>{{ news.title }}</a></h1>
+              <div class="date">
+                  <p class='badges-paragraph odibee'>Published on: {{ news.published_date|date:"D M Y"}}</p>
+              </div>
+        </div>
+        <div class="dropdown-divider"></div>
+      {% endfor %}
+    {% else %}
+      <br>
+      <h1 class='odibee' style='text-align:center;'>No News yet!</h1>
+      <br>
+    {% endif %}
   </div>
+  <a style='button' class='btn btn-primary custom-btn btn-lg btn-block share-tech-font' href="{% url 'homepage' %}" role='button'><span class='fas fa-home' style='margin-right:10px;'></span>Back to Index</a>
 
 </div>
 

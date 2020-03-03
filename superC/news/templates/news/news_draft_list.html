@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-  <div class="jumbotron jumbotron-fluid" style="margin-top: 40px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+<div class="container" style='margin-top: 40px;'>
+  <div class="jumbotron jumbotron-fluid" style="margin-top: 0px; padding:0px; border: 2px solid #b3b3ff; background-color: #5b4e9d">
+    <h1 class="title-merits archivo-black-font">Drafts</h1>
     <div class="container">
-      <h1 class='contentfont'>Drafts</h1>
-      {% for news in news_list %}
-        <div class="container">
-          <hr>
-          <h1 class='firstfont dropdown-color'><a href="{% url 'news:detail_news' pk=news.pk %}" style='color:inherit'>Draft Name: {{ news.title }}</a></h1>
-          <p class='badges-paragraph'>created: {{ news.created_date|date:'d-m-Y'}}</p>
+      {% if news_list %}
+        {% for news in news_list %}
+          <div class="container">
+            <hr>
+            <h1 class='firstfont dropdown-color'><a href="{% url 'news:detail_news' pk=news.pk %}" style='color:inherit'>Draft Name: {{ news.title }}</a></h1>
+            <p class='badges-paragraph'>created: {{ news.created_date|date:'d-m-Y'}}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <br>
+        <h1 class='odibee' style='text-align:center'>No Drafts here!</h1>
+        <br>
 
+      {% endif %}
 
-        </div>
-      {% endfor %}
+    </div>
+  </div>
+  <a tyle='button' class='btn btn-primary custom-btn btn-lg btn-block share-tech-font' href="{% url 'news:news_list' %}" role='button'>Back to News List!</a>
+</div>
 {% endblock %}

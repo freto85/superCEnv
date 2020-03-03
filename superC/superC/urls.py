@@ -23,14 +23,13 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.HomePage.as_view(),name='homepage'),
-    path('test/',views.TestPage.as_view(),name='test'),
     path('thanks/', views.ThanksPage.as_view(),name='thanks'),
     path('accounts/', include(('accounts.urls','accounts'),namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('badges/', include(('badges.urls','badges'), namespace='badges')),
+    path('merits/', include(('badges.urls','badges'), namespace='badges')),
     path('news/', include(("news.urls",'news'), namespace="news")),
     path('resources/', include(('resources.urls','resources'), namespace='resources')),
-    path('rewards/', include(('rewards.urls','rewards'), namespace='rewards')),
+    path('roadmap/', include(('rewards.urls','rewards'), namespace='rewards')),
     path('special/', include(('special.urls','special'), namespace='special')),
     path('station/', include(('station.urls','station'), namespace='station')),
 ]

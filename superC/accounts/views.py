@@ -9,6 +9,7 @@ from accounts.models import User, MyAccountManager, Message
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+from django import forms
 
 user_filter = get_user_model()
 # Create your views here.
@@ -40,14 +41,14 @@ class AccountUpdateMedalsView(UpdateView, LoginRequiredMixin):
 
 class AccountUpdateTrophiesView(UpdateView, LoginRequiredMixin):
     login_url = '/accounts/login/'
-    template_name = 'accounts/account_update_personal.html'
+    template_name = 'accounts/account_update_trophies.html'
     redirect_field_name = 'accounts:detail_account'
     form_class = AccountUpdateTrophiesForm
     model = User
 
 class AccountUpdateStickersView(UpdateView, LoginRequiredMixin):
     login_url = '/accounts/login/'
-    template_name = 'accounts/account_update_personal.html'
+    template_name = 'accounts/account_update_stickers.html'
     redirect_field_name = 'accounts:detail_account'
     form_class = AccountUpdateStickersForm
     model = User
@@ -100,6 +101,7 @@ def messages_content(request,pk):
             message_form.save()
             new_message = Message(sender=user_instance,receiver=other_person, message_dataID=message_form)
             new_message.save()
+            form = MessageForm()
     else:
         form = MessageForm()
 
@@ -114,6 +116,7 @@ def messages_new(request):
     username = request.user
     if request.method == 'POST':
         form_user = NewMessageForm(request.POST)
+        form_user.fields['receiver'] = forms.ModelChoiceField(User.objects.exclude(username=request.user))
         form_message = MessageForm(request.POST)
         if form_user.is_valid() and form_message.is_valid():
             message = form_message.save()
@@ -124,6 +127,7 @@ def messages_new(request):
             return redirect('accounts:messages_list')
     else:
         form_user = NewMessageForm()
+        form_user.fields['receiver'] = forms.ModelChoiceField(User.objects.exclude(username=request.user))
         form_message = MessageForm()
     context = {'form_user': form_user,
                 'form_message': form_message,

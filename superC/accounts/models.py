@@ -137,3 +137,6 @@ class Message(models.Model):
 
         def get_absolute_url(self):
                 return reverse('accounts:messages', kwargs={'pk':sens.pk})
+
+        class Meta:
+            unique_together = ('sender', 'receiver')

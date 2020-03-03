@@ -11,148 +11,155 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4dc7e526f3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Archivo+Black|Russo+One|Share+Tech|Squada+One|Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Odibee+Sans|Amatic+SC|Archivo+Black|Russo+One|Share+Tech|Squada+One|Yanone+Kaffeesatz&display=swap" rel="stylesheet">
   </head>
   <body>
     {% if user.is_authenticated %}
-    <nav class="navbar navbar-expand-xl navbar-dark fixed-top russo-one-font navbar-base navbar-default" style="padding:0px !important; margin:0px !important;">
-      <a class="navbar-brand" href="/">
-        <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/girl-1615938-1372037.png"  width="80" height="80" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li id='nav-link-1' class="nav-item dropdown padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; border-left: 2px solid #b3b3ff;'>
-            <a  class="nav-link dropdown-toggle font-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-user brand-rotate padding-buttons-navbar"></span>
-              Account Management</a>
-            <div class="dropdown-menu dropdown-color-two dropdown-border animate slideIn" aria-labelledby="navbarDropdown" style="margin-left: 10px !important; margin-top: 30px !important; font-size: 0.9em !important; padding-top: 10px !important;">
-              <a class="dropdown-item dropdown-color" href="{% url 'accounts:account_info' %}"><span class="fas fa-address-card brand-rotate padding-dropdown-navbar"></span>My Account</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'accounts:messages_list' %}"><span class="fas fa-comments brand-rotate padding-dropdown-navbar"></span>Messages</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'accounts:logout' %}"><span class="fas fa-sign-out-alt brand-rotate padding-dropdown-navbar" ></span>Log Out</a>
-            </div>
-          </li>
-          <li id='nav-link-2' class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; border-left: 2px solid #b3b3ff;text-align:center; width:220px;'>
-            <a class="nav-link font-color" href="{% url 'news:news_list' %}"><span  class="fas fa-newspaper brand-rotate padding-buttons-navbar"></span>Blog & News</a>
-          </li>
-          <li id='nav-link-3' class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; width: 180px !important; text-align:center;border-left: 2px solid #b3b3ff; width:220px;'>
-            <a class="nav-link font-color" href="{% url 'badges:badges' %}"><span style='text-align:center;' class="fas fa-award brand-rotate padding-buttons-navbar"></span>Merits</a>
-          </li>
-          <li id='nav-link-4' class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; width: 180px !important; text-align:center;border-left: 2px solid #b3b3ff; width:220px;'>
-            <a class="nav-link font-color" href="{% url 'rewards:rewards' %}"><span style='text-align:center;' class="far fa-map brand-rotate padding-buttons-navbar"></span>Roadmap</a>
-          </li>
-          <li id='nav-link-5' class="nav-item dropdown padding-buttons-navbar" style='padding: 0px !important; margin: 0px !important; width: 180px; text-align:center;  border-left: 2px solid #b3b3ff; width:220px;'>
-            <a class="nav-link dropdown-toggle font-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id='box-change' style='text-align:center;' class="fas fa-box brand-rotate padding-buttons-navbar"></span>
-              Resources
-            </a>
-            <div id='menu-change' class="dropdown-menu dropdown-color-two dropdown-border animate slideIn" aria-labelledby="navbarDropdown" style="margin-left: 60px !important; margin-top: 30px !important; font-size: 0.9em !important;">
-              <a  class="dropdown-item dropdown-color" href="{% url 'resources:glossary' %}"><span class="fas fa-paperclip brand-rotate padding-dropdown-navbar"></span>Glossary</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'resources:activities' %}"><span class="fas fa-book-reader brand-rotate padding-dropdown-navbar"></span>Homework</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'resources:downloads'%}"><span class="fa fas fa-book brand-rotate padding-dropdown-navbar"></span>Library</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'resources:games'%}"><span class="fas fa-gamepad brand-rotate padding-dropdown-navbar"></span>Games</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'resources:media'%}"><span class="fas fa-photo-video brand-rotate padding-dropdown-navbar"></span>Media</a>
-            </div>
-          </li>
-          <li id='nav-link-6' class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: 0px !important; width: 200px; text-align:center; border-left: 2px solid #b3b3ff; border-right: 2px solid #b3b3ff; width:220px;'>
-            <a class="nav-link font-color" href="{% url 'special:special' %}"><span style='text-align:center;' class="fas fa-star brand-rotate padding-buttons-navbar"></span>Special Events</a>
-          {% if user.is_superuser %}
-          <li class="nav-item padding-buttons-navbar">
-            <a class="nav-link font-color2" href="{% url 'station:station_home' %}"><span class="fas fa-star brand-rotate padding-buttons-navbar"></span>Account: {{ user.username }}</a>
-          </li>
-          {% else %}
-          <li class="nav-item padding-buttons-navbar">
-            <a class="nav-link" href="#"><span class="fas fa-star brand-rotate padding-buttons-navbar"></span>Account: {{ user.username }}</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top navbar-default squada-font">
+        <a class="navbar-brand col-xs" href="/" style='border-radius: 30%;border: 2px solid white !important;'>
+          <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/girl-1615938-1372037.png"  width="60" height="60" alt="">
+        </a>
+        <button class="navbar-toggler navbar-toggler-center sandwich" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav nav-fill w-75 align-items-start">
+            <li id='nav-link-1' class="nav-item nav-shape dropdown">
+              <a class="nav-link dropdown-toggle nav-width" style='color:#E69A8DFF;margin-left:5px;' href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style='color:#E69A8DFF;margin-right:10px;' class="fas fa-user brand-rotate"></span>
+                  My Account</a>
+              <div class="dropdown-menu animate slideIn navbar-dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item navbar-dropdown" href="{% url 'accounts:account_info' %}"><span style='margin: 0px 10px 0px 10px;' class="fas fa-address-card brand-rotate"></span>Account Info</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item navbar-dropdown" href="{% url 'accounts:messages_list' %}"><span style='margin: 0px 10px 0px 10px;' class="fas fa-comments brand-rotate"></span>Messages</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item navbar-dropdown" href="{% url 'accounts:logout' %}"><span style='margin: 0px 10px 0px 10px;' class="fas fa-sign-out-alt brand-rotate" ></span>Log Out</a>
+              </div>
+            </li>
+            <li id='nav-link-2' class="nav-item nav-shape">
+              <a class="nav-link nav-width" style='color:#E69A8DFF;margin-left:5px;' href="{% url 'news:news_list' %}" ><span style='margin-right:10px;' class="fas fa-newspaper brand-rotate"></span>Blog & News</a>
+            </li>
+            <li id='nav-link-3'  class="nav-item nav-shape">
+              <a class="nav-link nav-width" style='color:#E69A8DFF;margin-left:5px;' href="{% url 'badges:badges' %}"><span style='margin-right:10px;' class="fas fa-award brand-rotate"></span>Merits</a>
+            </li>
+            <li id='nav-link-4' class="nav-item nav-shape">
+              <a class="nav-link nav-width" style='color:#E69A8DFF;margin-left:5px;' href="{% url 'rewards:rewards' %}"><span style='margin-right:10px;' class="fas fa-map-signs brand-rotate"></span>Roadmap</a>
+            </li>
+            <li id='nav-link-5 '  class="nav-item nav-shape dropdown">
+              <a class="nav-link dropdown-toggle nav-width" style='color:#E69A8DFF;margin-left:5px;' href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style='margin-right:10px !important;' id='box-change' class="fas fa-box brand-rotate padding-buttons-navbar"></span>
+                Resources
+              </a>
+              <div id='menu-change' class="dropdown-menu animate slideIn navbar-dropdown-menu" aria-labelledby="navbarDropdown">
+                <a  class="dropdown-item navbar-dropdown" href="{% url 'resources:glossary' %}"><span style='margin: 0px 10px 0px 10px;' class="fas fa-spell-check brand-rotate"></span>Glossary</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item navbar-dropdown" href="{% url 'resources:homework' %}"><span style='margin: 0px 10px 0px 10px;' class="fas fa-pencil-ruler brand-rotate"></span>Homework</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item navbar-dropdown" href="{% url 'resources:library'%}"><span style='margin: 0px 10px 0px 10px;' class="fa fas fa-book-reader brand-rotate"></span>Library</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item navbar-dropdown" href="{% url 'resources:games'%}"><span style='margin: 0px 10px 0px 10px;' class="fas fa-gamepad brand-rotate"></span>Games</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item navbar-dropdown" href="{% url 'resources:media'%}"><span style='margin: 0px 10px 0px 10px;' class="fas fa-photo-video brand-rotate"></span>Media</a>
+              </div>
+            </li>
+            <li id='nav-link-6' class="nav-item nav-shape">
+              <a class="nav-link nav-width" style='color:#E69A8DFF;margin-left:5px;' href="{% url 'special:special' %}"><span style='margin-right:10px;' class="fas fa-star brand-rotate"></span>Special Events</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     {% else %}
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top russo-one-font navbar-base navbar-default" style="padding:0px !important; margin:0px !important;">
-      <a class="navbar-brand" href="/">
-        <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/girl-1615938-1372037.png"  width="80" height="80" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li id='nav-link-1' class="nav-item dropdown padding-buttons-navbar">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-user brand-rotate padding-buttons-navbar"></span>
-              Account Management</a>
-            <div class="dropdown-menu dropdown-color-two dropdown-border animate slideIn" aria-labelledby="navbarDropdown" style="margin-left: 60px !important; margin-top: 30px !important; font-size: 0.9em !important;">
-
-              <a class="dropdown-item dropdown-color" href="{% url 'accounts:login' %}"><span class="fas fa-sign-in-alt brand-rotate padding-dropdown-navbar"></span>Log In</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'accounts:signup' %}"><span class="fas fa-user-plus brand-rotate padding-dropdown-navbar"></span>Sign Up</a>
-          </li>
-          <li class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; border-left: 5px solid #440378;text-align:center; width:220px;'>
-            <a class="nav-link disabled" href="{% url 'news:news_list' %}"><span class="fas fa-newspaper brand-rotate padding-buttons-navbar"></span>Blog & News</a>
-          </li>
-          <li class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; width: 180px !important; text-align:center;border-left: 5px solid #440378; width:220px;'>
-            <a class="nav-link disabled" href="{% url 'badges:badges' %}"><span class="fas fa-award brand-rotate padding-buttons-navbar"></span>Merits</a>
-          </li>
-          <li class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: auto !important; width: 180px !important; text-align:center; border-left: 5px solid #440378; width:220px;'>
-            <a class="nav-link disabled" href="{% url 'rewards:rewards' %}"><span class="far fa-map brand-rotate padding-buttons-navbar"></span>Roadmap</a>
-          </li>
-          <li id='button-change' class="nav-item dropdown padding-buttons-navbar" style='padding: 0px !important; margin: 0px !important; width: 180px; text-align:center; border-left: 5px solid #440378; width:220px;'>
-            <a  class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id='box-change' class="fas fa-box brand-rotate padding-buttons-navbar"></span>
-              Resources
-            </a>
-            <div id='menu-change' class="dropdown-menu dropdown-color-two dropdown-border animate slideIn" aria-labelledby="navbarDropdown" style="margin-left: 60px !important; margin-top: 30px !important; font-size: 0.9em !important;">
-              <a class="dropdown-item dropdown-color" href="{% url 'resources:glossary' %}"><span class="fas fa-paperclip brand-rotate padding-dropdown-navbar"></span>Glossary</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'resources:activities' %}"><span class="fas fa-book-reader brand-rotate padding-dropdown-navbar"></span>Homework</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'resources:downloads'%}"><span class="fas fa-book brand-rotate padding-dropdown-navbar"></span>Library</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'resources:games'%}"><span class="fas fa-gamepad brand-rotate padding-dropdown-navbar"></span>Games</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-color" href="{% url 'resources:media'%}"><span class="fas fa-photo-video brand-rotate padding-dropdown-navbar"></span>Media</a>
-            </div>
-          </li>
-          <li class="nav-item padding-buttons-navbar" style='padding: 0px !important; margin: 0px !important; width: 200px; text-align:center;border-left: 5px solid #440378;border-right: 5px solid #440378; width:220px;'>
-            <a class="nav-link disabled" href="{% url 'special:special' %}"><span class="fas fa-star brand-rotate padding-buttons-navbar"></span>Special Events</a>
-          </li>
-          <li class="nav-item padding-buttons-navbar">
-            <a class="nav-link" href="#"><span class="fas fa-star brand-rotate padding-buttons-navbar"></span>Username: Guest</a></li>
-        </ul>
-      </div>
-    </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top navbar-default squada-font">
+        <a class="navbar-brand col-xs" href="/" style='border-radius: 30%;border: 2px solid white !important;'>
+          <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/girl-1615938-1372037.png"  width="60" height="60" alt="">
+        </a>
+        <button class="navbar-toggler navbar-toggler-center sandwich" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav nav-fill w-75 align-items-start">
+            <li id='nav-link-1' class="nav-item nav-shape dropdown">
+              <a class="nav-link dropdown-toggle nav-width" style='color:#E69A8DFF;margin-left:5px;' href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style='color:#E69A8DFF;margin-right:10px;' class="fas fa-user brand-rotate"></span>
+                My Account
+              </a>
+              <div class="dropdown-menu animate slideIn navbar-dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item navbar-dropdown" href="{% url 'accounts:login' %}">
+                  <span style='margin: 0px 10px 0px 10px;' class="fas fa-sign-in-alt brand-rotate">
+                  </span>Log In
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item navbar-dropdown" href="{% url 'accounts:signup' %}">
+                  <span style='margin: 0px 10px 0px 10px;' class="fas fa-user-plus brand-rotate">
+                  </span>Sign Up
+                </a>
+              </div>
+            </li>
+            <li class="nav-item nav-shape">
+              <a class="nav-link nav-width disabled" style='margin-left:5px;' href="{% url 'news:news_list' %}">
+                <span style='margin-right:10px;' class="fas fa-newspaper brand-rotate">
+                </span>Blog & News
+              </a>
+            </li>
+            <li class="nav-item nav-shape">
+              <a class="nav-link nav-width disabled" style='margin-left:5px;' href="{% url 'badges:badges' %}">
+                <span style='margin-right:10px;' class="fas fa-award brand-rotate">
+                </span>Merits
+              </a>
+            </li>
+            <li class="nav-item nav-shape">
+              <a class="nav-link nav-width disabled" style='margin-left:5px;' href="{% url 'rewards:rewards' %}">
+                <span style='margin-right:10px;' class="fas fa-map-signs brand-rotate">
+                </span>Roadmap
+              </a>
+            </li>
+            <li class="nav-item nav-shape dropdown">
+              <a class="nav-link dropdown-toggle nav-width disabled" style='margin-left:5px;' href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span style='margin-right:10px !important;' id='box-change' class="fas fa-box brand-rotate padding-buttons-navbar">
+                </span>Resources
+              </a>
+              <div id='menu-change' class="dropdown-menu dropdown-color-two dropdown-border animate slideIn" aria-labelledby="navbarDropdown" style="margin-left: 60px !important; margin-top: 30px !important; font-size: 0.9em !important;">
+                <a class="dropdown-item dropdown-color" href="{% url 'resources:glossary' %}"><span class="fas fa-spell-check brand-rotate padding-dropdown-navbar"></span>Glossary</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-color" href="{% url 'resources:homework' %}"><span class="fas fa-pencil-ruler brand-rotate padding-dropdown-navbar"></span>Homework</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-color" href="{% url 'resources:library'%}"><span class="fas fa-book-reader brand-rotate padding-dropdown-navbar"></span>Library</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-color" href="{% url 'resources:games'%}"><span class="fas fa-gamepad brand-rotate padding-dropdown-navbar"></span>Games</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-color" href="{% url 'resources:media'%}"><span class="fas fa-photo-video brand-rotate padding-dropdown-navbar"></span>Media</a>
+              </div>
+            </li>
+            <li class="nav-item nav-shape">
+              <a class="nav-link nav-width disabled" style='margin-left:5px;' href="{% url 'special:special' %}"><span style='margin-right:10px;' class="fas fa-star brand-rotate"></span>Special Events</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     {% endif %}
     {% block content %}
     {% endblock %}
     <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark firstfont navbar-default" style='border-top: 2px solid #b3b3ff !important'>
     <script>
-    $('#menu-change').hover(function(){
-      $('#box-change').toggleClass('fa-box-open');
-    })
-    $('#nav-link-1').hover(function(){
-      $('#nav-link-1').toggleClass('nav-buttons-change')
-    })
-    $('#nav-link-2').hover(function(){
-      $('#nav-link-2').toggleClass('nav-buttons-change')
-    })
-    $('#nav-link-3').hover(function(){
-      $('#nav-link-3').toggleClass('nav-buttons-change')
-    })
-    $('#nav-link-4').hover(function(){
-      $('#nav-link-4').toggleClass('nav-buttons-change')
-    })
-    $('#nav-link-5').hover(function(){
-      $('#nav-link-5').toggleClass('nav-buttons-change')
-    })
-    $('#nav-link-6').hover(function(){
-      $('#nav-link-6').toggleClass('nav-buttons-change')
-    })
-    /* .toggleClass(nav-buttons-change)  */
+      $('#menu-change').hover(function(){
+        $('#box-change').toggleClass('fa-box-open');
+      })
+      $('#nav-link-1').hover(function(){
+        $('#nav-link-1').toggleClass('nav-buttons-change')
+      })
+      $('#nav-link-2').hover(function(){
+        $('#nav-link-2').toggleClass('nav-buttons-change')
+      })
+      $('#nav-link-3').hover(function(){
+        $('#nav-link-3').toggleClass('nav-buttons-change')
+      })
+      $('#nav-link-4').hover(function(){
+        $('#nav-link-4').toggleClass('nav-buttons-change')
+      })
+      $('#nav-link-5').hover(function(){
+        $('#nav-link-5').toggleClass('nav-buttons-change')
+      })
+      $('#nav-link-6').hover(function(){
+        $('#nav-link-6').toggleClass('nav-buttons-change')
+      })
+      /* .toggleClass(nav-buttons-change)  */
     </script>
     <script src="{% static 'js/master.js' %}"></script>
     <script src="https://unpkg.com/@popperjs/core@2.0.0-rc.3"></script>
